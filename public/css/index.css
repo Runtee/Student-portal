@@ -1,0 +1,144 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url("../images/back.jpg");
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+header{
+    background: rgb(8, 58, 8);
+} 
+
+.navbar {
+    overflow: auto;
+}
+
+.navbar a{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 15px;
+    font-weight: bold;
+}
+
+.navbar pre{
+    float: left;
+    padding: 5px;
+    color: #fff;
+    /* text-transform: uppercase; */
+    font-size: 20px;
+}
+
+.navbar ul{
+    list-style: none;
+    float: right;
+}
+
+.navbar ul li{
+    float: left;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.navbar ul li a:hover, 
+.navbar ul li a.current {     
+    background:rgb(36, 104, 16);
+    border-radius: 15px;
+}
+
+.logo{
+    float: left;
+    border-radius: 30%;
+    width: 50px;
+    height: auto;
+    margin: 5px;
+    padding: 15px;
+}
+
+.signinbox {
+    position: relative;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    /* position: initial; */
+    height: 400px;
+    padding: 65px 40px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .5);    
+}
+
+.user {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-50px/2);
+    left: calc(50% - 30px);
+}
+
+h2{
+    margin: 0;
+    padding: 0 0 20px;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.signinbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.signinbox input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.signinbox input[type=text],
+.signinbox input[type=password] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+.signinbox input[type="submit"] {
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    background: rgb(8, 58, 8);
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.signinbox input[type="submit"]:hover {
+    background: seagreen ;
+    color: rgb(8, 58, 8);
+}
+.signinbox a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    background:rgb(8, 58, 8);
+    color: #fff;
+/*    position: bottom;*/
+    padding: 30px;
+}

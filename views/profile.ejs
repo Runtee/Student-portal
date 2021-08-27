@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('layouts/head'); -%>
+
+<body style="background-color: white;">
+
+  <%- include('layouts/header'); -%>
+
+  <%- include('layouts/sidebar'); -%>
+
+  <div class='profile-table'>
+    <table>
+      <caption>Student Profile</caption>
+      <tr>
+        <td>
+          <p class="main-word" style="font-size: 14px;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Full name:</span><br>
+              <%=studentInfo[0].surName %> <%= studentInfo[0].firstName%> <%= studentInfo[0].middleName %>
+            </p>
+        </td>
+        <td style="padding: 2px;">
+          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">email</span><br>
+              <%=studentInfo[0].email %></p>
+        </td>
+        <td rowspan="2"> 
+          <img src="/public/<%= studentInfo[0].image %>" style="height: 150px; width: 150px" alt="">
+          <p>passport</p>
+        </td>
+
+      </tr>
+      <tr>
+
+      </tr>
+
+      <tr>
+        <td>
+          <p class="main-word" style="font-size: 14px;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Sex:</span><br>
+              <%=studentInfo[0].sex %></p>
+        </td>
+        <td style="padding: 2px;">
+          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Date of birth:</span><br>
+              <%=studentInfo[0].DOB %></p>
+        </td>
+        <td style="padding: 2px;">
+          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Registration Number </span><br>
+              <%=studentInfo[0].userid.username %>
+            </p>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          <p class="main-word" style="font-size: 14px;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Department:</span><br>
+              <%=studentInfo[0].department %></p>
+        </td>
+        <td style="padding: 2px;">
+          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Faculty:</span><br>
+              <%=studentInfo[0].faculty %></p>
+        </td>
+        <td style="padding: 2px;">
+          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Phone:</span><br>
+              <%=studentInfo[0].phone %></p>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          <p class="main-word" style="font-size: 14px;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">State of Origin:</span><br>
+              <%=studentInfo[0].state %></p>
+        </td>
+        <td style="padding: 2px;">
+          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Local goverment area:</span><br>
+              <%=studentInfo[0].LGA %></p>
+        </td>
+        <td style="padding: 2px;">
+          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+              style="font-size: 14px; font-style: italic;"></span><br>
+            </p>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          <p class="main-word" style="font-size: 14px;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Parent/Guardian name:</span><br>
+              <%=studentInfo[0].parent %></p>
+        </td>
+        <td style="padding: 2px;">
+          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+              style="font-size: 14px; font-style: italic;"></span><br>
+            </p>
+        </td>
+        <td style="padding: 2px;">
+          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+              style="font-size: 14px; font-style: italic;">Parent/Guardian phone:</span><br>
+              <%=studentInfo[0].phone %></p>
+        </td>
+
+      </tr>
+
+    </table>
+  </div>
+</body>
+
+</html>

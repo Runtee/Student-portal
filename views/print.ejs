@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/head'); -%>
+
+    <body style="background-color: white;">
+
+        <%- include('layouts/header'); -%>
+
+            <%- include('layouts/sidebar'); -%>
+            
+                <div class="tab" >
+                    <div style="padding: 2px;
+                    color: aliceblue; width: 650px;margin-left: 300px; font-size: 20px;background-color: gray; border: 10px solid aliceblue;">
+                        <h2 class="main-word" style=" font-family: inherit; text-align: center;">
+                            UNIVERSITY OF NIGERIA NSUKKA
+                        </h2>
+                        <h3 class="main-word" style=" font-family: inherit; text-align: center;">
+                            Course Registration Form
+                        </h3>
+                        <p class="main-word"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Full name:</span><br>
+                            <%=studentInfo[0].surName %>
+                                <%=studentInfo[0].firstName %>
+                                    <%=studentInfo[0].middleName %>
+                        </p>
+
+                        <p class="main-word" ><span class="lable"
+                                style="font-size: 14px; font-style: italic;">email</span><br>
+                            <%=studentInfo[0].email %>
+                        </p>
+                        <p style="margin-left: 450px;margin-top: -100px;">
+                        <img src="/public/<%= studentInfo[0].image %>" style="height: 150px; width: 150px; " alt="">
+                        passport</p>
+
+
+                        <p class="main-word" style="margin-top: -100px;">
+                            Sex:<br>
+                            <%=studentInfo[0].sex %>
+                        </p>
+
+                        <p class="main-word" style="margin-left: 200px;margin-top: -70px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Date of birth:</span><br>
+                            <%=studentInfo[0].DOB %>
+                        </p>
+
+                    
+
+                        <p class="main-word" ><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Department:</span><br>
+                            <%=studentInfo[0].department %>
+                        </p>
+
+                        <p class="main-word" style="margin-left: 200px;margin-top: -70px;""><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Faculty:</span><br>
+                            <%=studentInfo[0].faculty %>
+                        </p>
+
+                        <p class="main-word" ><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Phone:</span><br>
+                            <%=studentInfo[0].phone %>
+                        </p>
+
+                        <p class="main-word" style="margin-left: 200px;margin-top: -70px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">State of Origin:</span><br>
+                            <%=studentInfo[0].state %>
+                        </p>
+
+                        <p class="main-word" style="margin-left: 400px;margin-top: -70px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Local goverment area:</span><br>
+                            <%=studentInfo[0].LGA %>
+                        </p>
+
+
+                        <p class="main-word" style="font-size: 14px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Parent/Guardian name:</span><br>
+                            <%=studentInfo[0].parent %>
+                        </p>
+
+                        <p class="main-word" style="margin-left: 200px;margin-top: -70px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Parent/Guardian phone:</span><br>
+                            0902937736733</p>
+
+                        <p class="main-word" style="text-align: center; font-family: inherit;">
+                        Registered Courses
+                        </p>
+
+                    <table class="print" style="width: 650px;">
+
+                        <% for (var i=0; i < cos.length; i++) { %>
+                            <tr>
+                                <td>
+                                    <%= cos[i] %>
+                                </td>
+                                <td>
+                                    <%= cosName[i] %>
+                                </td>
+                                
+                            </tr>
+
+                            <% } %>
+                                <tr>
+                                    <td>
+                                        cos 222
+                                    </td>
+                                    <td>
+                                        computer programming I
+                                    </td>
+                                    
+                                </tr>
+
+                    </table>
+                </div>
+
+                </div>
+                
+    </body>
+
+</html>

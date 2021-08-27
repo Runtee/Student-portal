@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/head'); -%>
+
+<body style="background-color: white;">
+
+<%- include('layouts/header'); -%>
+
+<%- include('layouts/sidebar'); -%>
+
+  <div class='profile-table'>
+    <table>
+        <caption>Hostel fee invoice</caption>
+        <tr>
+            <td>
+                <p class="main-word" style="font-size: 17px;font-style: bold;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">Invoice number</span><br> <%=hostel_Invoice[0].id %>
+                    </p>
+            </td>
+            <td style="padding: 2px;">
+                <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;"></span><br>
+                    </p>
+            </td>
+            <td>
+            <img src="/public/images/school_logo.gif" style="size: 5px; width: 100px" alt="">
+            </td>
+
+        </tr>
+        
+        <tr>
+            <td>
+                <p class="main-word" style="font-size: 14px;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">Full name:</span><br>
+                    <%=studentInfo[0].surName %> <%=studentInfo[0].firstName %> <%=studentInfo[0].middleName %> </p>
+            </td>
+            <td style="padding: 2px;">
+                <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">email</span><br>
+                        <%=studentInfo[0].email %> </p>
+            </td>
+            <td>
+                
+            </td>
+
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+            <td>
+                <p class="main-word" style="font-size: 14px;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">Department:</span><br>
+                        <%=studentInfo[0].department %> </p>
+            </td>
+            <td style="padding: 2px;">
+                <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">Faculty:</span><br>
+                        <%=studentInfo[0].faculty %> </p>
+            </td>
+            
+            
+
+        </tr>
+        <tr>
+            <td style="padding: 2px;">
+            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+                style="font-size: 14px; font-style: italic;">Phone:</span><br>
+                <%=studentInfo[0].phone %> </p>
+    </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="main-word" style="font-size: 14px;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">Session:</span><br>
+                        <%=hostel_Invoice[0].session %> </p>
+            </td>
+            <td style="padding: 2px;">
+                <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">Level:</span><br>
+                        <%=hostel_Invoice[0].level %></p>
+            </td>
+            <td style="padding: 2px;">
+                <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;"></span><br>
+                </p>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <p class="main-word" style="font-size: 14px;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">Amount:</span><br>
+                    50000</p>
+            
+        </tr>
+        <tr>
+            <td>
+                <p class="main-word" style="font-size: 14px;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">Hostel:</span><br>
+                        <%=hostel_Invoice[0].hostel %></p>
+            </td>
+            <td style="padding: 2px;">
+                <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
+                        style="font-size: 14px; font-style: italic;">Room number:</span><br>
+                        <%=hostel_Invoice[0].room %></p>
+            </td>
+            
+
+        </tr>
+    </table>
+</div>
+
+</body>
+
+</html>

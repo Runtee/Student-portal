@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/head_home'); -%>
+<body>
+  <%- include('layouts/header_home'); -%>
+
+ <div class="list-group-item-danger">
+        <% if(errors !=null && errors.length> 0){ %>
+            <ul class="list-group"></ul>
+            <% for (var i=0; i < errors.length; i++) { %>
+                <li>
+                    <%= errors[i] %>
+                </li>
+                <% } %>
+                    </ul>
+                    <% } %>
+    </div>
+  <div class="signinbox" >  
+      <img src="./images/school_logo.gif"class="user">
+        <h2>Sign up </h2>
+        <form action="/fresh/post" method="POST">
+              <p>username</p>
+            <input type="text" placeholder="Enter Reg No" name = 'username'>
+            <p>password</p>
+            <input type="password" placeholder="Enter Reg No" name="password">
+            <input type="submit" name='' value=continue>
+            <a href="#">Forget Password</a>
+        </form>
+  </div>
+    <br>
+    <br>
+    <br>
+ 
+  <footer class="footer">
+      <p>built by Group 2 Cdel IT Students 2021 set. Copyright &copy; group 2</p>
+  </footer>  
+  </body>
+</html>

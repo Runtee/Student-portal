@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('layouts/head'); -%>
+
+<body style="background-color: white;">
+
+  <%- include('layouts/header'); -%>
+
+  <%- include('layouts/sidebar'); -%>
+
+  <div class="course_form">
+    <form action="/dashboard/paySchoolfees" method="POST">
+      <p>Select session <select id="session" name="session" required>
+             <option></option>
+
+      <option value="2021/2022">2021/2022 </option>
+      <option value="2020/2021">2020/2021 </option>
+      <option value="2019/2020">2019/2020 </option>
+      <option value="2018/2017">2018/2017 </option>
+      <option value="2027/2018">2027/2018 </option>
+      <option value="2016/2017">2016/2017 </option>
+      <option value="2015/2016">2015/2016 </option>
+      <option value="2014/2015">2014/2015 </option>
+
+
+       </select></p>
+    
+   
+
+   <p>Select level <select id="level" name="level" required>
+             <option></option>
+
+      <option value="100">100</option>
+            <option value="200">200</option>
+      <option value="300">300</option>
+      <option value="400">400</option>
+      <option value="500">500</option>
+      <option value="600">600</option>
+
+    </select>
+  </p>
+<input type="submit" value = 'Get Invoice'>
+
+</form>   
+</div>
+    
+</body>
+
+</html>
