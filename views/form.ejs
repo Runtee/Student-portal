@@ -5,27 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal | Welcome</title>
-    <link rel="stylesheet" href="../public/css/form.css">
-    <link rel="stylesheet" href="../public/css/error.css">
+    <%- include('layouts/head_form adim'); -%>
+    <%- include('layouts/head'); -%>
+
 </head>
 
-<body>
-    <header>
-        <nav class="navbar">
-            <img src="/public/images/school_logo.gif" alt="no image" class="logo">
-            <pre>
-   UNIVERSITY OF NIGERIA, NSUKKA 
-     <small>to restore the dignity of man</small>
-</pre>
+<body style="background: url(public/images/back.jpg); background-size: cover;">
+    <%- include('layouts/header adim'); -%>
 
 
-            <ul>
-                <li><a class="current" href="/">Home</a></li>
-
-            </ul>
-        </nav>
-    </header>
-
+    <%- include('layouts/sidebar adim'); -%>
     <div class="list-group-item-danger">
         <% if(errors !=null && errors.length> 0){ %>
             <ul class="list-group"></ul>

@@ -1,0 +1,15 @@
+.all-students table{
+color: rgb(21, 55, 78);
+}
+.all-students th{
+    background-color:  #15374e;
+color: #fff;
+}
+.all-students  td{
+    border: 1px solid #15374e;
+    color: rgb(7, 32, 49);
+
+}
+.all-students caption{
+    color: rgb(8, 32, 48);
+}

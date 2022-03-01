@@ -10,6 +10,7 @@ module.exports = (req, res) => {
             image: '/images/' + image.name,
             userid: req.session.userId
         }, (error, user) => {
+            console.log(error)
             if (error) {
                 const validationErrors = Object.keys(error.errors).map(key =>
                     error.errors[key].message)
@@ -18,7 +19,7 @@ module.exports = (req, res) => {
                 return res.redirect('/register')
             }
         })
-        res.redirect('/')
+        res.redirect('/adim/dashboard/fresh/successful')
     })
 
 

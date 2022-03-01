@@ -63,6 +63,72 @@ const StudentInfoSchema = new Schema({
     image: {
         type: String,
         required: [true, 'Please provide your passport'],
+    },
+    caddress:{
+        type: String,
+
+    },
+    paddress:{
+        type: String,
+
+    },
+    religion:{
+        type: String,
+
+    },
+    regNo:{
+        type: String,
+
+    },
+    bgroup:{
+        type: String,
+
+    },
+    gtype:{
+        type: String,
+   
+    },
+    saddress:{
+        type:String
+    },
+    smobile:{
+        type:String
+    },
+    nfullname:{
+        type:String
+    },
+    naddress:{
+        type:String
+    },
+    nmobile:{
+        type:String
+    },
+    nemail:{
+        type:String
+    },
+    stype:{
+        type:String
+    },
+    mode:{
+        type:String
+    },
+    ms:{
+        type:String
+    },
+    ey:{
+        type:String
+    },
+    yg:{
+        type:String
+    },
+    ys:{
+        type:String
+    },
+    yg:{
+        type:String
+    },
+    sick:{
+        type:Array
     }
 });
 

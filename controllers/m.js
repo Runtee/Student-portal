@@ -1,3 +1,4 @@
-let m = [3,55,6,8,99,4]
-console.log(m[m.length-1]);
-// console.log(m.length)
+const bcrypt = require('bcrypt')
+var newPassword ='2017/243586'
+var k = bcrypt.hash(newPassword, 10)
+console.log(k);

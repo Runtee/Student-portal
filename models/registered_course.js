@@ -8,11 +8,28 @@ const CourseSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
-        },
-        courses: {
+    },
+    regNo: {
+        type: String,
+        required: [true, 'Please select regNo'],
+    },
+    courses: {
         type: Array,
         required: [true, 'Please select courses'],
+    },
+    session: {
+        type: String,
+        required: [true, 'Please provide session'],
+    },
+    level: {
+        type: String,
+        required: [true, 'Please provide level']
+    },
+    semester: {
+        type: String,
+        required: [true, 'Please provide semester']
     }
+
 })
 
 const registeredCourses = mongoose.model('registeredCourses', CourseSchema);
