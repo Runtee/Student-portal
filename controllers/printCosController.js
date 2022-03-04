@@ -9,6 +9,7 @@ module.exports = async (req, res) => {
     const studentInfo = await User.find({ userid: req.session.userId }).populate('userid');
     var cosC = [];
     await registered_course.find({ userid: req.session.userId },(error,reg_cos)=>{
+        // console.log(reg_cos[reg_cos.length -1].courses);
         cosC.push(reg_cos[reg_cos.length -1].courses)
     })
     const cos = await cosC[0];

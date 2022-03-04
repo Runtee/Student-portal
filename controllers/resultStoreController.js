@@ -1,7 +1,7 @@
 const result = require('../models/resultStore.js')
 
-module.exports = (req, res) => {
-    result.create({
+module.exports = async (req, res) => {
+    await result.create({
         ...req.body,
         userid: req.session.userId
     },

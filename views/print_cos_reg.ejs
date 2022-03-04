@@ -7,142 +7,158 @@
 
         <%- include('layouts/header'); -%>
 
-        <%- include('layouts/sidebar'); -%>
+        <div class="sidebar-main" id="mysidebar">
+            <nav class="sidebar-nav">
+        
+              <ul class="sidebar">
+                <li><a href="/dashboard/profile">profile</a>
+                    <ul>
+                        <li>
+                            <a href="/dashboard/change-password/">   change password
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/dashboard/schoolfees">schoool fees</a></li>
+                <li class="current_side"><a href="/dashboard/course-registration">course registration</a>
+                <li><a href="/dashboard/hostel">hostel accomodation</a></li>
+                <li><a href="/dashboard/result">results</a></li>
+                <li><a href="/auth/logout">logout</a></li>
+              </ul>
+        
+            </nav>
+          </div>
+                    
+                <div class="tab" >
+                    <div style="padding: 2px;
+                    color: black; width: 650px;margin-left: 300px; font-size: 20px;background-color: white; border: 10px solid gray;">
+                        <h2 class="main-word" style=" font-family: inherit; text-align: center;">
+                            UNIVERSITY OF NIGERIA NSUKKA
+                        </h2>
+                        <h3 class="main-word" style=" font-family: inherit; text-align: center;">
+                            Course Registration Form
+                        </h3>
+                        <p class="main-word"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Full name:</span><br>
+                            <%=studentInfo[0].surName %>
+                                <%=studentInfo[0].firstName %>
+                                    <%=studentInfo[0].middleName %>
+                        </p>
 
-        <table style="margin-left: 300px; width: 650px;">
-            <tr>
-                        <td>
-                            <p class="main-word" style="font-size: 14px;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">Full name:</span><br>
-                                <%=studentInfo[0].surName %>
-                                    <%=studentInfo[0].firstName %>
-                                        <%=studentInfo[0].middleName %>
-                            </p>
-                        </td>
-                        <td style="padding: 2px;">
-                            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">email</span><br>
-                                <%=studentInfo[0].email %>
-                            </p>
-                        </td>
-                        <td rowspan="2"> 
-                            <img src="/public/<%= studentInfo[0].image %>" style="height: 150px; width: 150px" alt="">
-                            <p>passport</p>
-                          </td>
+                        <p class="main-word" ><span class="lable"
+                                style="font-size: 14px; font-style: italic;">email</span><br>
+                            <%=studentInfo[0].email %>
+                        </p>
+                        <p style="margin-left: 450px;margin-top: -100px;">
+                        <img src="/public/<%= studentInfo[0].image %>" style="height: 150px; width: 150px; " alt="">
+                        passport</p>
 
-                    </tr>
-                    <tr>
 
-                    </tr>
+                        <p class="main-word" style="margin-top: -100px;">
+                            Sex:<br>
+                            <%=studentInfo[0].sex %>
+                        </p>
 
-                    <tr>
-                        <td>
-                            <p class="main-word" style="font-size: 14px;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">Sex:</span><br>
-                                <%=studentInfo[0].sex %>
-                            </p>
-                        </td>
-                        <td style="padding: 2px;">
-                            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">Date of birth:</span><br>
-                                <%=studentInfo[0].DOB %>
-                            </p>
-                        </td>
-                        <td style="padding: 2px;">
-                            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;"> </span><br>
-                            </p>
-                        </td>
+                        <p class="main-word" style="margin-left: 200px;margin-top: -70px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Date of birth:</span><br>
+                            <%=studentInfo[0].DOB %>
+                        </p>
+                        <p class="main-word" ><span class="lable"
+                            style="font-size: 14px; font-style: italic;">Registration Number:</span><br>
+                        <%=studentInfo[0].userid.username %>
+                    </p>
 
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="main-word" style="font-size: 14px;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">Department:</span><br>
-                                <%=studentInfo[0].department %>
-                            </p>
-                        </td>
-                        <td style="padding: 2px;">
-                            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">Faculty:</span><br>
-                                <%=studentInfo[0].faculty %>
-                            </p>
-                        </td>
-                        <td style="padding: 2px;">
-                            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">Phone:</span><br>
-                                <%=studentInfo[0].phone %>
-                            </p>
-                        </td>
+                    <p class="main-word" style="margin-left: 200px;margin-top: -70px;""><span class="lable"
+                            style="font-size: 14px; font-style: italic;">Level:</span><br>
+                            <%=cosreg[0].level %>
+                    </p>
+                    <p class="main-word" ><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Session:</span><br>
+                            <%=cosreg[0].session %>
+                        </p>
 
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="main-word" style="font-size: 14px;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">State of Origin:</span><br>
-                                <%=studentInfo[0].state %>
-                            </p>
-                        </td>
-                        <td style="padding: 2px;">
-                            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">Local goverment area:</span><br>
-                                <%=studentInfo[0].LGA %>
-                            </p>
-                        </td>
-                        <td style="padding: 2px;">
-                            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;"></span><br>
-                            </p>
-                        </td>
+                        <p class="main-word" style="margin-left: 200px;margin-top: -70px;""><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Semester:</span><br>
+                            <%=cosreg[0].semester %>
+                        </p>
+                        <p class="main-word" ><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Department:</span><br>
+                            <%=studentInfo[0].department %>
+                        </p>
 
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="main-word" style="font-size: 14px;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">Parent/Guardian name:</span><br>
-                                <%=studentInfo[0].parent %>
-                            </p>
-                        </td>
-                        <td style="padding: 2px;">
-                            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;">Parent/Guardian phone:</span><br>
-                                0902937736733</p>
-                        </td>
-                        <td style="padding: 2px;">
-                            <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                                    style="font-size: 14px; font-style: italic;"></span><br>
-                            </p>
-                        </td>
+                        <p class="main-word" style="margin-left: 200px;margin-top: -70px;""><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Faculty:</span><br>
+                            <%=studentInfo[0].faculty %>
+                        </p>
+                        
+                
+                        <p class="main-word" ><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Phone:</span><br>
+                            <%=studentInfo[0].phone %>
+                        </p>
 
-                    </tr>
-                    <% for (var i=0; i < cos.length; i++) { %>
+                        <p class="main-word" style="margin-left: 200px;margin-top: -70px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">State of Origin:</span><br>
+                            <%=studentInfo[0].state %>
+                        </p>
+
+                        <p class="main-word" style="margin-left: 400px;margin-top: -70px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Local goverment area:</span><br>
+                            <%=studentInfo[0].LGA %>
+                        </p>
+
+
+                        <p class="main-word" style="font-size: 14px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Parent/Guardian name:</span><br>
+                            <%=studentInfo[0].parent %>
+                        </p> 
+
+                        <p class="main-word" style="margin-left: 200px;margin-top: -70px;"><span class="lable"
+                                style="font-size: 14px; font-style: italic;">Parent/Guardian phone:</span><br>
+                            0902937736733</p>
+
+                        <p class="main-word" style="text-align: center; font-family: inherit;">
+                        Registered Courses
+                        </p>
+
+                    <table class="print" style="width: 650px;height: auto; margin-left: auto;">
                         <tr>
-                            <td>
-                                <%= cos[i] %>
-                            </td>
-                            <td>
-                                <%= cosName[i] %>
-                            </td>
-                            <td>
-
-                            </td>
+                            <th>
+                                Course code
+                            </th>
+                            <th>
+                                Course Title
+                            </th>
+                            
                         </tr>
-
-                        <% } %>
+                        <% if(cos != null && cos.length > 0){ %>
+                        <% for (var i=0; i < cos.length; i++) { %>
                             <tr>
                                 <td>
-                                    cos 222
+                                    <%= cos[i] %>
                                 </td>
                                 <td>
-                                    computer programming I
+                                    <%= cosName[i] %>
                                 </td>
-                                <td>
-
-                                </td>
+                                
                             </tr>
 
-                </table>
+                            <% } %>
+                            <% } %>
+                                <tr>
+                                    <td>
+                                        cos 222
+                                    </td>
+                                    <td>
+                                        computer programming I
+                                    </td>
+                                    
+                                </tr>
 
+                    </table>
+                </div>
+
+                </div>
+                
     </body>
 
 </html>

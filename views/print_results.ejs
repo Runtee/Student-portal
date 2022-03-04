@@ -1,204 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include('layouts/head'); -%>
+<%- include('layouts/head'); -%>
+<link rel="stylesheet" type="text/css" href="/public/css/result.css">
 
-<body style="background-color: white;">
+    <body style="background-color: white;">
 
-  <%- include('layouts/header'); -%>
+        <%- include('layouts/header'); -%>
 
+        <div class="sidebar-main" id="mysidebar">
+            <nav class="sidebar-nav">
+        
+              <ul class="sidebar">
+                <li><a href="/dashboard/profile">profile</a>
+                    <ul>
+                        <li>
+                            <a href="/dashboard/change-password/">   change password
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/dashboard/schoolfees">schoool fees</a></li>
+                <li><a href="/dashboard/course-registration">course registration</a>
+                <li ><a href="/dashboard/hostel">hostel accomodation</a></li>
+                <li class="current_side"><a href="/dashboard/result">results</a></li>
+                <li><a href="/auth/logout">logout</a></li>
+              </ul>
+        
+            </nav>
+          </div>
+          <div class="bod">
+    <header>
+        <h1>STUDENT'S RESULT</h1>
+    </header>
+    <table classinventory class="meta" style="height: auto; border: none;">
+        <tr>
+            <th>
+            <span class='contenteditable'>NAME <strong>:</strong></span>
+            </th>
+            <td>
+                <span contenteditable class='contenteditable'> <%=studentInfo[0].surName %>
+                    <%=studentInfo[0].firstName %>
+                        <%=studentInfo[0].middleName %></span>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <span class='contenteditable'>REG NUMBER <strong>:</strong></span>
+            </th>
+                <td>
+                    <span class='contenteditable'> <%=studentInfo[0].userid.username %>
+                    </span>
+                </td>
+        </tr>
+        <tr>
+            <th>
+                <span class='contenteditable'>DEPARTMENT <strong>:</strong></span>
+            </th>
+                <td>
+                    <span id="prefix" class='contenteditable'><%=studentInfo[0].department %></span>
+                </td>
+        </tr> 
+        <tr>
+            <th>
+                <span class='contenteditable'>LEVEL <strong>:</strong></span>
+            </th>
+                <td>
+                    <span id="prefix" class='contenteditable'><%=result[0].level %></span>
+                </td>
+        </tr>
+        <tr>
+            <th>
+                <span class='contenteditable'>SESSION <strong>:</strong></span>
+            </th>
+                <td>
+                    <span id="prefix" class='contenteditable'><%=result[0].session %></span>
+                </td>
+        </tr>
+        <tr>
+            <th>
+                <span class='contenteditable'>SEMESTER <strong>:</strong></span>
+            </th>
+                <td>
+                    <span id="prefix" class='contenteditable'> <%=result[0].semester %></span>
+                </td>
+        </tr>
+        
+    </table>
+    
+            <br><br><br><br><br>
+            <table class="res" style="height: auto; border: none;">
+                <thead class="thead">
+                    <tr>
+                        <th>
+                            <span contenteditable="">COURSE CODE</span>
+                        </th>
+                        <th>
+                            <span contenteditable="">COURSE TITLE</span>
+                        </th>
+                        <th>
+                            <span contenteditable="">GRADE</span>
+                        </th>
+                     </tr>
+                </thead>
+                <tbody class="data">
+                    <% if(result != null && result.length > 0){ %>
+                        <% for (var i=0; i < result[0].courseCode.length; i++) { %>
+                        <tr>
+                            <td>
+                                
+                                <span contenteditable=""><%=result[0].courseCode[i]%></span>
+                            </td>  
+                            <td>    
+                                <span contenteditable=""><%=cosName[i]%></span>
+                            </td> 
+                            <td>    
+                                <span contenteditable=""><%=result[0].grade[i]%></span>
+                            </td>
+                        </tr>
+                        <% } %>
 
-
-  <%- include('layouts/sidebar'); -%>
-
-<table style="margin-left: 300px; width: 650px;">
-    <tr>
-        <td>
-          <p class="main-word" style="font-size: 14px;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Full name:</span><br>
-            Ekwo Chinonso Evans</p>
-        </td>
-        <td style="padding: 2px;">
-          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">email</span><br>
-            ekwo.evans@yahoo.com</p>
-        </td>
-        <td rowspan="2"> 
-          <img src="/images/back.jpg" style="size: 5px; width: 120px" alt="">
-          <p>passport</p>
-        </td>
-
-      </tr>
-      <tr>
-
-      </tr>
-
-      <tr>
-        <td>
-          <p class="main-word" style="font-size: 14px;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Sex:</span><br>
-            Male</p>
-        </td>
-        <td style="padding: 2px;">
-          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Date of birth:</span><br>
-            11/12/2005</p>
-        </td>
-        <td style="padding: 2px;">
-          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-              style="font-size: 14px; font-style: italic;"> </span><br>
-            </p>
-        </td>
-
-      </tr>
-      <tr>
-        <td>
-          <p class="main-word" style="font-size: 14px;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Department:</span><br>
-            Computer/Statistisc</p>
-        </td>
-        <td style="padding: 2px;">
-          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Faculty:</span><br>
-            Physical Science</p>
-        </td>
-        <td style="padding: 2px;">
-          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Phone:</span><br>
-            08104505457</p>
-        </td>
-
-      </tr>
-      
-      <tr>
-        <td>
-          <p class="main-word" style="font-size: 14px;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Session:</span><br>
-            2020/2021</p>
-        </td>
-        <td style="padding: 2px;">
-          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Semester:</span><br>
-              Second</p>
-        </td>
-        <td style="padding: 2px;">
-          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-              style="font-size: 14px; font-style: italic;"></span><br>
-            </p>
-        </td>
-
-      </tr>
-
-    <tr>
-        <td>
-            cos 222
-        </td>
-        <td>
-            computer programming I
-        </td>
-        <td>
-A              
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            cos 222
-        </td>
-        <td>
-            computer programming I
-        </td>
-        <td>
-A              
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            cos 222
-        </td>
-        <td>
-            computer programming I
-        </td>
-        <td>
-A              
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            cos 222
-        </td>
-        <td>
-            computer programming I
-        </td>
-        <td>
-A              
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            cos 222
-        </td>
-        <td>
-            computer programming I
-        </td>
-        <td>
-A              
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            cos 222
-        </td>
-        <td>
-            computer programming I
-        </td>
-        <td>
-A              
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            cos 222
-        </td>
-        <td>
-            computer programming I
-        </td>
-        <td>
-A              
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            cos 222
-        </td>
-        <td>
-            computer programming I
-        </td>
-        <td>
-A              
-        </td>
-    </tr>
-
-    <tr>
-        <td>
-            cos 222
-        </td>
-        <td>
-            computer programming I
-        </td>
-        <td>
-A              
-        </td>
-    </tr>
-
-</table>
-
-</body>
-
+                        <% } %>
+                        
+                 </tbody>
+            </table>
+</div>           
+    </body>
+</div>
 </html>

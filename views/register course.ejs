@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('layouts/head'); -%>
+<%- include('layouts/head'); -%>
 
-<body style="background-color: white;">
+    <body style="background-color: white;">
 
-    <%- include('layouts/header'); -%>
-    <!-- <form method="" action="" -->
-    <%- include('layouts/sidebar'); -%>
+        <%- include('layouts/header'); -%>
+            <!-- <form method="" action="" -->
+            <div class="sidebar-main" id="mysidebar">
+                <nav class="sidebar-nav">
+
+                    <ul class="sidebar">
+                        <li><a href="/dashboard/profile">profile</a>
+                            <ul>
+                                <li>
+                                    <a href="/dashboard/change-password/">   change password
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="/dashboard/schoolfees">schoool fees</a></li>
+                        <li class="current_side"><a href="/dashboard/course-registration">course registration</a>
+                        <li><a href="/dashboard/hostel">hostel accomodation</a></li>
+                        <li><a href="/dashboard/result">results</a></li>
+                        <li><a href="/auth/logout">logout</a></li>
+                    </ul>
+
+                </nav>
+            </div>
 
 
-
-<div class = 'course_reg' >
-    <form action="/dashboard/course-registration/register/store" method="POST">
-        <table style="margin-left: 300px; width: 800px;" name = 'course_reg'>
-            <caption>Select courses</caption>
-<% for (var i = 0; i < course.length; i++) { %>           
-<tr> 
-    <td>
-        <label style ='border: 20px aliceblue'>
-            <span class="cos" style="margin-left: 30px;"><%= course[i].courseCode %></span> <span class="cos" > <%= course[i].courseTitle %></span> <span class="cos" style="margin-left: 30px;"> <input type="checkbox" name="courses" value="<%= course[i].courseCode %>"> </span>
-            </p> </label> 
-    </td>
-</tr>
-<% } %>
-        </table>
-        <input type="submit" value="Register" style="margin-left: 600px; background-color: rgba(39, 39, 39, 0.918);   ">
-    </form>
-</div>
-</body>
+            <div class='course_regS'>
+                <form action="/dashboard/course-registration/register/store" method="POST">
+                    <table class="cos_register">
+                        <caption>Select courses</caption>
+                        <tr>
+                            <td>
+                                Course Code
+                            </td>
+                            <td>
+                                Course Title
+                            </td>
+                            <td>
+                                Course Unit
+                            </td>
+                            <td>
+                                Select Course 
+                            </td>
+                        </tr>
+                        <% for (var i=0; i < course.length; i++) { %>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <label for="courses" style='border: 20px aliceblue'>
+                                            <%= course[i].courseCode %>
+                                    </p> </label>
+                                </td>
+                                <td>
+                                    <%= course[i].courseTitle %>
+                                </td>
+                                <td>
+                                    2
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="courses" value="<%= course[i].courseCode %>">
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+    </body>
 
 </html>

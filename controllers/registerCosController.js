@@ -10,7 +10,7 @@ module.exports =async (req,res)=>{
     const cosreg = await cosReg.find({userid:req.session.userId}).populate('userid');
     const course = await courses.find({'level':cosreg[cosreg.length-1].level,'department':StudentInfo[0].department, 'semester':cosreg[cosreg.length-1].semester,}); 
     res.render('register course',{
-        course
+        course  
     })
 
 }

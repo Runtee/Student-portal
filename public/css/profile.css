@@ -1,0 +1,120 @@
+.profile .line{
+    border: 0.1px solid black;
+}
+.profile{
+    width: 900px;
+    border: 5px solid black;
+    margin-left: 300px;
+    height: 100%;
+    background-color: whitesmoke;
+    
+
+}
+.profile p{
+    color: rgb(22, 61, 99);
+    font-size: 14px;
+    margin: 0;
+    /* text-align: center; */
+}
+.profile td{
+    width: 300px;
+}
+.profile td input[type='text']  {
+    display: inline-block;
+  align-items:flex-end;
+    width: 95%;
+    text-decoration: center;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.profile input[type='email']  {
+    display: inline-block;
+  
+    width: 95%;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.profile input[type='date']  {
+    display: inline-block;
+  
+    width: 95%;
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.profile input[type='tel']  {
+    display: inline-block;
+  
+    width: 95%;
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.profile select  {
+    display: inline-block;
+  
+    width: 95%;
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.profile input[type='checkbox']  {
+    display: inline-block;
+  
+    width: auto;
+    padding: 10px;
+    margin: auto;
+    margin-left: 3px;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.profile .heading {
+    text-transform: uppercase;
+    color: rgb(43, 74, 105);
+    /* border-bottom: 3px solid lightslategray; */
+    padding: 10px;
+}
+.profile input[type='submit']  {
+    display: inline-block;
+  
+    width: auto;
+    padding: 10px;
+    margin-left: 400px;
+    margin-bottom: 7px;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+    background-color: rgb(72, 101, 131);
+    box-sizing: border-box;
+}
+.profile h1,.profile h4{
+    /* text-align: center; */
+    color: rgb(43, 74, 105);
+}
+.profile h1{
+    text-align: center;
+margin-left: 10px;
+}
+.profile img{
+    width: 160px;
+    height: 150px;
+    position: absolute;
+    margin-top: -500px;
+    margin-left: 650px;
+
+    height: 200px;
+}

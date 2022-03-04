@@ -8,8 +8,30 @@
   <%- include('layouts/header'); -%>
 
 
-<%- include('layouts/sidebar'); -%>
+  <div class="sidebar-main" id="mysidebar">
+    <nav class="sidebar-nav">
 
+      <ul class="sidebar">
+        <li><a href="/dashboard/profile">profile</a>
+          <ul>
+              <li>
+                  <a href="/dashboard/change-password/">   change password
+              </li>
+          </ul>
+      </li>
+        <li><a href="/dashboard/schoolfees">schoool fees</a></li>
+        <li ><a href="/dashboard/course-registration" class="current_side">course registration</a>
+        <li><a href="/dashboard/hostel">hostel accomodation</a></li>
+        <li><a href="/dashboard/result">results</a></li>
+        <li><a href="/auth/logout">logout</a></li>
+      </ul>
+
+    </nav>
+  </div>
+
+
+    <button class="menu">Menu</button>
+  </span>
 
 <section>
   <div class="course_form">
@@ -49,7 +71,7 @@
 
     </select>
   </p>
-<input type="submit">
+<input type="submit" value="continue">
 </form>
     </div>
     </section>

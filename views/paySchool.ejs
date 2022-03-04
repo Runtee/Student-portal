@@ -1,104 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 
-<%- include('layouts/head'); -%>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link type="text/css" rel="stylesheet" href="/public/css/sidebar.css">
+        <link rel="stylesheet" href="/public/css/invoice.css">
+        <script type="text/javascript" src="/public/js/function.js"></script>
+        <title>Dashboard</title>
+      </head>        
+      <script src="/public/js/"></script>
 
 <body style="background-color: white;">
 
     <%- include('layouts/header'); -%>
 
-    <%- include('layouts/sidebar'); -%>
+    <div class="sidebar-main" id="mysidebar">
+        <nav class="sidebar-nav">
+    
+          <ul class="sidebar">
+            <li><a href="/dashboard/profile">profile</a>
+                <ul>
+                    <li>
+                        <a href="/dashboard/change-password/">   change password
+                    </li>
+                </ul>
+            </li>
+            <li class="current_side"><a href="/dashboard/schoolfees">schoool fees</a></li>
+            <li><a href="/dashboard/course-registration">course registration</a>
+            <li><a href="/dashboard/hostel">hostel accomodation</a></li>
+            <li><a href="/dashboard/result">results</a></li>
+            <li><a href="/auth/logout">logout</a></li>
+          </ul>
+    
+        </nav>
+      </div>
+    
+<div class="body">        
+    <h class="header">
+        <h1>University of Nigeria Nsukka</h1>
+        <H2 style="text-align: center; background: none; font-size: 22px;">SCHOOL FEES INVOICE</H2>
 
-    <div class='profile-table'>
-        <table>
-            <caption>School fee invoice</caption>
+        <span>
+            <img src="/public/images/school_logo.gif" alt="PROJECTPIC">
+        </span>
+    </h>
+        <h2>PAYER INFORMATION</h2>
+        <table classinventory class="meta">
             <tr>
+                <th>
+                <span contenteditable="">NAME</span>
+                </th>
                 <td>
-                    <p class="main-word" style="font-size: 17px;font-style: bold;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;">Invoice number</span><br> <%=schoolInvoice[schoolInvoice.length-1].id %> 
-                        </p>
+                    <span contenteditable=""><%=studentInfo[0].surName %> <%=studentInfo[0].firstName %> <%=studentInfo[0].middleName %>
+                    </span>
                 </td>
-                <td style="padding: 2px;">
-                    <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;"></span><br>
-                        </p>
-                </td>
-                <td>
-                <img src="/public/images/school_logo.gif" style="size: 5px; width: 100px" alt="">
-                </td>
-                 
-            </tr>
-            
-            <tr>
-                <td>
-                    <p class="main-word" style="font-size: 14px;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;">Full name:</span><br>
-                            <%=studentInfo[0].surName %> <%=studentInfo[0].firstName %> <%=studentInfo[0].middleName %></p>
-                </td>
-                <td style="padding: 2px;">
-                    <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;">email</span><br>
-                            <%=studentInfo[0].email %></p>
-                </td>
-                <td>
-                    
-                </td>
-
             </tr>
             <tr>
-
+                <th>
+                    <span contenteditable="">EMAIL</span>
+                </th>
+                    <td>
+                        <span contenteditable=""><%=studentInfo[0].email %></span>
+                    </td>
             </tr>
             <tr>
-                <td>
-                    <p class="main-word" style="font-size: 14px;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;">Department:</span><br>
-                            <%=studentInfo[0].department %></p>
-                </td>
-                <td style="padding: 2px;">
-                    <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;">Faculty:</span><br>
-                            <%=studentInfo[0].faculty %></p>
-                </td>
-                
-                
-
+                <th>
+                    <span contenteditable="">PHONE NUMBER</span>
+                </th>
+                    <td>
+                        <span id="prefix" contenteditable=""><%=studentInfo[0].phone %></span>
+                    </td>
             </tr>
-            <tr>
-                <td style="padding: 2px;">
-                <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                    style="font-size: 14px; font-style: italic;">Phone:</span><br>
-                    <%=studentInfo[0].phone %></p>
-        </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="main-word" style="font-size: 14px;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;">Session:</span><br>
-                        <%=schoolInvoice[schoolInvoice.length-1].session %></p>
-                </td>
-                <td style="padding: 2px;">
-                    <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;">Level:</span><br>
-                            <%=schoolInvoice[schoolInvoice.length-1].level %></p>
-                </td>
-                <td style="padding: 2px;">
-                    <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;"></span><br>
-                    </p>
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    <p class="main-word" style="font-size: 14px;"><span class="lable"
-                            style="font-size: 14px; font-style: italic;">Amount:</span><br>
-                        50000</p>
-                
-            </tr>
-
         </table>
-    </div>
+        <div><br><br><br><br><br><br>
+            <h3>PAYMENT DETAILS</h3></div>
+            <table class="inventory">
+                <thead>
+                    <tr>
+                        <th>
+                            <span contenteditable="">PAYMENT DATE</span>
+                        </th>
+                        <th>
+                            <span contenteditable="">PAYMENT REF</span>
+                        </th>
+                        <th>
+                            <span contenteditable="">SERVICE DESCRIPTION</span>
+                        </th>
+                        <th>
+                            <span contenteditable="">AMOUNT(NGN)</span>
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            
+                            <span contenteditable="">20/08/2021</span>
+                        </td>
+                        <td>        
+                            <span contenteditable=""><%=schoolInvoice[schoolInvoice.length-1].id %></span>
+                        </td>
+                        <td>    
+                            <span contenteditable="">SCHOOL FEES</span>
+                        </td>
+                        <td> 
+                            <span contenteditable="">20,000.00</span>
+                        </td>
+                    </tr></tbody>
+            </table>
+            
+        <table class="inventory">
+            <thead>
+                <tr>
+                    <th>
+                        <span contenteditable="">SESSION</span>
+                    </th>
+                    <th>
+                        <span contenteditable="">LEVEL</span>
+                    </th>
+                    <th>
+                        <span contenteditable="">FACULTY</span>
+                    </th>
+                    <th>
+                        <span contenteditable="">DEPARTMENT</span>
+                    </th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        
+                        <span contenteditable=""><%=schoolInvoice[schoolInvoice.length-1].session %></span>
+                    </td>
+                    <td>        
+                        <span contenteditable=""><%=schoolInvoice[schoolInvoice.length-1].level %></span>
+                    </td>
+                    <td>    
+                        <span contenteditable=""><%=studentInfo[0].faculty %></span>
+                    </td>
+                    <td> 
+                        <span contenteditable=""><%=studentInfo[0].department %></span>
+                    </td>
+                   
+
+                </tr></tbody>
+        </table>
+        
+        <table class="balance">
+                <tr>
+                    <th>
+                        
+                        <span contenteditable="">TOTAL PAID</span>
+                    </th>   
+                    <td>    
+                        <span contenteditable="">20,214.22</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <span contenteditable="">TOTAL AMOUNT</span>
+                    </th>
+                    <td>    
+                        <span contenteditable="">20,214.22</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                    <span contenteditable="">BALANCE DUE</span>
+                    </th>
+                    <td>
+                        <span>0.00</span>
+                    </td>
+                </tr>
+            </table>
+            <table></table>
+            <br><br><br>
+            <h2>BILLER REQUIRED INFORMATION</h2>
+            <br>
+            <h2>PAYMENT CHANNEL INFORMATION</h2>
+            <table class="inventory">
+                <thead>
+                    <tr>
+                        <th>
+                            <span contenteditable="">PAYMENT CHANNEL</span>
+                        </th>
+                        <th>
+                            <span contenteditable="">AUTHORIZATION REF</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span contenteditable="">Card Payment</span>
+                        </td>
+                        <td>        
+                            <span contenteditable=""><%=schoolInvoice[schoolInvoice.length-1].id %> -</span>
+                        </td>
+                    </tr></tbody>
+            </table>
+</div>
 
 </body>
 
-</html>
+</html> 

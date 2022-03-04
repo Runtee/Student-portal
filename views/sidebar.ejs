@@ -8,9 +8,29 @@
   <%- include('layouts/header'); -%>
 
 
-  <%- include('layouts/sidebar'); -%>
+  <div class="sidebar-main" id="mysidebar">
+    <nav class="sidebar-nav">
 
-  <h1 style="margin-left: 500px;color: gray;">Welcome</h1>
+      <ul class="sidebar">
+        <li><a href="/dashboard/profile">profile</a>
+          <ul>
+              <li>
+                  <a href="/dashboard/change-password/">   change password
+              </li>
+          </ul>
+      </li>
+        <li ><a href="/dashboard/schoolfees">schoool fees</a></li>
+        <li><a href="/dashboard/course-registration">course registration</a>
+        <li ><a href="/dashboard/hostel">hostel accomodation</a></li>
+        <li ><a href="/dashboard/result">results</a></li>
+        <li><a href="/auth/logout">logout</a></li>
+      </ul>
+
+    </nav>
+  </div>
+
+  <h1 style="margin-left: 500px;color: gray;">Welcome <%=studentInfo[0].surName %> <%= studentInfo[0].firstName%> <%= studentInfo[0].middleName %>
+  </h1>
 
 </body>
 
