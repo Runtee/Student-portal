@@ -51,7 +51,7 @@ const courses = require('../models/courses.js')
 const StudentInfoScchema = new Schema({
     userid: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'StduentInfo',
         unique:true,
         required: true
         },

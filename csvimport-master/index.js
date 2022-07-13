@@ -8,7 +8,7 @@ app.use(fileUpload());
 
 server.listen(8000);
 
-mongoose.connect('mongodb://localhost/StudentPortal', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/Stu', { useNewUrlParser: true });
 
 
 app.get('/', function (req, res) {

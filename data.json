@@ -1,0 +1,57 @@
+[{
+    "_id": {
+  
+      "$oid": "62c2cc5c4abcce9f2275f0cc"
+    },
+    "student": [],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "62c2cd0b8cca0ca071bb7006"
+    },
+    "student": [
+      {
+        "_id": {
+          "$oid": "62c2cd0b8cca0ca071bb7007"
+        },
+        "regNo": "67565",
+        "courseCode": "ythgr",
+        "score": "76756td",
+        "grade": "675645",
+        "level": "4tdg"
+      },
+      {
+        "_id": {
+          "$oid": "62c2cd0b8cca0ca071bb7008"
+        },
+        "regNo": "67565",
+        "courseCode": "ythgr",
+        "score": "76756td",
+        "grade": "675645",
+        "level": "4tdg"
+      },
+      {
+        "_id": {
+          "$oid": "62c2cd0b8cca0ca071bb7009"
+        },
+        "regNo": "67565",
+        "courseCode": "ythgr",
+        "score": "76756td",
+        "grade": "675645",
+        "level": "4tdg"
+      },
+      {
+        "_id": {
+          "$oid": "62c2cd0b8cca0ca071bb700a"
+        },
+        "regNo": "67565",
+        "courseCode": "ythgr",
+        "score": "76756td",
+        "grade": "675645",
+        "level": "4tdg"
+      }
+    ],
+    "session": "100",
+    "semester": "ububub",
+    "__v": 0
+  }]

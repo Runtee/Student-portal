@@ -7,346 +7,369 @@
     <body style="background-color: white;">
 
         <%- include('layouts/header'); -%>
+            <nav class="navbar navbar-expand-lg navbar-dark nav2" aria-label="Tenth navbar example">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-            <div class="sidebar-main" id="mysidebar">
-                <nav class="sidebar-nav">
+                    <div class="collapse navbar-collapse justify-content-md-center " id="navbarsExample08">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="dropdown08"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown08">
+                                    <li><a class="dropdown-item" href="/dashboard/profile">Profile</a></li>
+                                    <li><a class="dropdown-item" href="/dashboard/change-password/">Change password</li>
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dashboard/schoolfees">Schoool fees</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dashboard/course-registration">Course registration</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dashboard/hostel">Hostel accomodation</a></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dashboard/result">Results</a>
+                            </li>
 
-                    <ul class="sidebar">
-                        <li class="current"><a href="/dashboard/profile">profile</a>
-                            <ul>
-                                <li>
-                                    <a href="/dashboard/change-password/">   change password
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="/dashboard/schoolfees">schoool fees</a></li>
-                        <li><a href="/dashboard/course-registration">course registration</a>
-                        <li><a href="/dashboard/hostel">hostel accomodation</a></li>
-                        <li><a href="/dashboard/result">results</a></li>
-                        <li><a href="/auth/logout">logout</a></li>
-                    </ul>
-
-                </nav>
-            </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <div class="profile">
                 <form action="/profilePost" method="POST">
                     <h1 class="heading">personal information</h1>
-                    <div class="line">
-                    <table>
-                        <div>
-                            <tr>
-                                <td>
-                                    <label for="fname">First Name</label>
-                                </td>
-                                <td>
-                                    <input type="text" id="fname" name="firstName" readonly
-                                        value="<%= studentInfo[0].firstName%> ">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label for="mname">Middle Name</label>
-                                </td>
-                                <td>
-                                    <input type="text" id="mname" name="middleName" readonly
-                                        value="<%= studentInfo[0].middleName %>">
-                                </td><br>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                        <div class="tale">
+                            <div>
+                                <div class="img">
+                                    <img src="/public/<%= studentInfo[0].image %>">
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <label for="fname">First Name</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" id="fname" name="firstName" readonly
+                                            value="<%= studentInfo[0].firstName%> ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="mname">Middle Name</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" id="mname" name="middleName" readonly
+                                            value="<%= studentInfo[0].middleName %>">
+                                    </div><br>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="text">Surname</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <input type="text" id="sname" name="surName" readonly
                                             value="<%=studentInfo[0].surName %>">
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="email">Email</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <input type="email" name="email" id="email" value="<%=studentInfo[0].email %>"
                                             readonly> <br>
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="date">Date of Birth</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <input type="text" name="DOB" id="DOB" value="<%=studentInfo[0].DOB %>"
                                             readonly>
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="tel">Phone number</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <input type="tel" id="phone number" name="phone"
                                             value="<%=studentInfo[0].phone %>" readonly>
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="origin">State of Origin</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <select name="state" id="state" name='state' aria-readonly="true">
                                             <option value="<%=studentInfo[0].state %>">
                                                 <%=studentInfo[0].state %>
                                             </option>
 
                                         </select>
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="Local">Local Government of Origin</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <input type="text" id="local" name="LGA" value="<%=studentInfo[0].LGA %>"
                                             readonly>
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="caddress">Contact Address</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <input type="text" id="caddress" name="caddress">
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="paddress">Permanent Address</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <input type="text" id="paddress" name="paddress">
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="religion">Religion</label>
-                                    </td>
-                                    <td><select name="religion" id="religion">
+                                    </div>
+                                    <div class="col-6"><select name="religion" id="religion">
                                             <option value="Christianity">Christianity</option>
                                             <option value="Muslim">Muslim</option>
                                             <option value="others">others</option>
                                         </select>
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="bgroup">Blood Group</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <input type="text" name="bgroup" id="bgroup">
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="gtype">Genotype</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <select name="gtype" id="gtype">
                                             <option value="AA">AA</option>
                                             <option value="AS">AS</option>
                                             <option value="SS">SS</option>
                                         </select>
-                                    </td>
-                                </p>
-                            </tr>
-                            <tr>
-                                <p>
-                                    <td>
+                                    </div>
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                    <div class="col-6">
                                         <label for="sex">Sex</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-6">
                                         <select name="sex" id="sex" aria-readonly="true">
                                             <option>
                                                 <%=studentInfo[0].sex %>
                                             </option>
                                         </select>
-                                    </td>
-                                </p>
-                            </tr>
-                        </table>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
 
-                            <img src="/public/<%= studentInfo[0].image %>">
 
                         </div>
-                    <div class="line"></div>
-                    <div>
+                        <div class="line"></div>
+                        <div>
 
-                    <h1 class="">Sponsor and next of kin Details</h1>
+                            <h1 class="">Sponsor and next of kin Details</h1>
 
-                    <table>
-                            
-                            <tr>
-                                <td>
+                            <div class="tale">
+
+                                <div class="row">
+                                    <div class="col-md-3 col-6">
                                         <label for="sfullname">Sponsor's Full name</label>
-                                    </td>
-                                    <td><input type="text" name="parent" id="sfullname"
+                                    </div>
+                                    <div class="col-md-3 col-6"><input type="text" name="parent" id="sfullname"
                                             value="<%=studentInfo[0].parent %>">
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <label for="saddress">Sponsor's Address</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <input type="text" name="saddress" id="saddress">
-                                    </td>
-                            </tr>
-                            <tr>
-                                    <td><label for="smobile">Sponsor's Mobile No</label></td>
-                                    <td><input type="text" name="smobile" id="smoblile"
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-6"><label for="smobile">Sponsor's Mobile No</label></div>
+                                    <div class="col-md-3 col-6"><input type="text" name="smobile" id="smoblile"
                                             value="<%=studentInfo[0].phone %>">
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <label for="nfullname">Next of kin Full name</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <input type="text" name="nfullname" id="nfullname">
-                                    </td>
-                            </tr>
-                            <tr>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-6">
                                         <label for="naddress">Next of kin Address</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <input type="text" name="naddress" id="naddress">
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <label for="smobile">Next of kin Mobile No</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <input type="text" name="nmobile" id="smoblile">
-                                    </td>
-                            </tr>
-                            <tr>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-6">
                                         <label for="Email">Next of kin Email</label>
-                                    </td>
-                                    <td><input type="email" name="nemail" id="email">
-                                    </td>
-                            </tr>
+                                    </div>
+                                    <div class="col-md-3 col-6"><input type="email" name="nemail" id="email">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </table>
-                    <div class="line"></div>
-                    <div>
+                        <div class="line"></div>
+                        <div>
 
-                    <h1 class="sub-heading">Programme Details</h1>
+                            <h1 class="sub-heading">Programme Details</h1>
 
-                    <table>
-        
-                            <tr>
-                                    <td><label for="faculty">Faculty</label></td>
-                                    <td>
+                            <div class="tale">
+
+                                <div class="row">
+                                    <div class="col-md-3 col-6"><label for="faculty">Faculty</label></div>
+                                    <div class="col-md-3 col-6">
                                         <input type="text" name="faculty" value="<%=studentInfo[0].faculty %>" readonly>
-                                    </td>
+                                    </div>
 
-                                    <td>
+                                    <div class="col-md-3 col-6">
                                         <label for="dept">Department</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <input type="text" name="department" value="<%=studentInfo[0].department %>"
                                             readonly>
-                                    </td>
-                            </tr>
-                            <tr>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-6">
                                         <label for="stype">Student type</label>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <select name="stype" id="stype">
                                             <option>Undergraduate</option>
                                             <option>Postgraduate</option>
                                         </select>
-                                    </td>
-                                    <td>
+                                    </div>
+                                    <div class="col-md-3 col-6">
                                         <label for="mode">Mode of Entry</label>
-                                    </td>
-                                    <td><select name="mode" id="mode">
+                                    </div>
+                                    <div class="col-md-3 col-6"><select name="mode" id="mode">
                                             <option>JAMB</option>
                                             <option>Direct Entry</option>
                                         </select>
-                                    </td>
-                            </tr>
-                            <tr>
-                                    <td><label for="ms">Mode of study</label></td>
-                                    <td><select name="ms" id="ms">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-6"><label for="ms">Mode of study</label></div>
+                                    <div class="col-md-3 col-6"><select name="ms" id="ms">
                                             <option>Full Time</option>
                                             <option>Part Time</option>
-                                        </select></td>
-                                    <td><label for="ey">Entry Year</label></td>
-                                    <td><input type="date" name="ey" id="ey"></td>
+                                        </select></div>
+                                    <div class="col-md-3 col-6"><label for="ey">Entry Year</label></div>
+                                    <div class="col-md-3 col-6"><input type="date" name="ey" id="ey"></div>
 
-                            </tr>
-                            <tr>
-                                    <td><label for="yg">Year of Graduation</label></td>
-                                    <td><input type="date" name="yg" id="yg"></td>
-                                    <td><label for="ys">Year of Study</label></td>
-                                    <td><select name="ys" id="ys">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-6"><label for="yg">Year of Graduation</label></div>
+                                    <div class="col-md-3 col-6"><input type="date" name="yg" id="yg"></div>
+                                    <div class="col-md-3 col-6"><label for="ys">Year of Study</label></div>
+                                    <div class="col-md-3 col-6"><select name="ys" id="ys">
                                             <option value="100">100 level</option>
                                             <option value="100">200 level</option>
                                             <option value="100">300 level</option>
                                             <option value="100">400 level</option>
                                             <option value="100">500 level</option>
                                             <option value="100">600 level</option>
-                                        </select></td>
-                            </tr>
-                            <tr>
-                                    <td><label for="reg">Registration Number</label></td>
-                                    <td><input type="text" name="regNo" id="reg"
-                                            value="<%=studentInfo[0].userid.username %>" readonly></td>
-                            </tr>
+                                        </select></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-6"><label for="reg">Registration Number</label></div>
+                                    <div class="col-md-3 col-6"><input type="text" name="regNo" id="reg"
+                                            value="<%=studentInfo[0].userid.username %>" readonly></div>
+                                </div>
+                            </div>
                         </div>
-                    </table>
-                    <div class="line"></div>
-                    <div>
+                        <div class="line"></div>
+                        <div>
 
-                        <h1 class="medical">Medical History</h1>
+                            <h1 class="medical">Medical History</h1>
 
-                        Diabetes<input type="checkbox" name='sick' value="diabetes" id="diabetes">
-                        Sickle cell<input type="checkbox" name='sick' value="sickle" id="sickle">
-                        Asthma<input type="checkbox" name='sick' value="asthma" id="asthma">
-                        Hypertension<input type="checkbox" name='sick' value="hypertension" id="hypertension">
-                        Disabilities<input type="checkbox" name='sick' value="disabilities" id="disabilities">
-                        Allergies<input type="checkbox" name='sick' value="allergies" id="allergies">
-                        Blind<input type="checkbox" name='sick' value="blind" id="blind">
+                            Diabetes<input type="checkbox" name='sick' value="diabetes" id="diabetes">
+                            Sickle cell<input type="checkbox" name='sick' value="sickle" id="sickle">
+                            Asthma<input type="checkbox" name='sick' value="asthma" id="asthma">
+                            Hypertension<input type="checkbox" name='sick' value="hypertension" id="hypertension">
+                            Disabilities<input type="checkbox" name='sick' value="disabilities" id="disabilities">
+                            Allergies<input type="checkbox" name='sick' value="allergies" id="allergies">
+                            Blind<input type="checkbox" name='sick' value="blind" id="blind">
 
-                        <h4>I certify that the information given in this form is, to the best of my knowldege and
-                            belief,
-                            correct and
-                            complete <input type="checkbox" required> </h4>
-                    </div>
+                            <h4>I certify that the information given in this form is, to the best of my knowldege and
+                                belief,
+                                correct and
+                                complete <input type="checkbox" required> </h4>
+                        </div>
+                        <div class="update">
+                            <input class="btn" type="submit" value="Update">
 
-                    <input type="submit" value="Submit">
+                        </div>
                 </form>
             </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     </body>
 
 </html>

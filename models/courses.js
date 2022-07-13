@@ -24,6 +24,12 @@ const CourseSchema = new Schema({
         type: String,
          required: true
     },
+    offeredby:{
+        department: {type:Array},
+        level:{
+            type:Array
+        }
+    }
 })
 
 const Courses = mongoose.model('course', CourseSchema);

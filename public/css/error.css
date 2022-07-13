@@ -1,22 +1,5 @@
-.list-group-item-danger{
-    background-color: rgb(165, 248, 149);
-    color: rgb(175, 12, 12);
-    /* transform: translate(-50%, -50%); */
-    font-size: 16px;
-    width: 650px;
-    position:static;
-    margin-left: 200px;
-    margin-top: 10px;
-}
 
-.list-group-item-danger ul{
-    padding: 2px;
-    
-}
 
-.list-group-item-danger li{
+.danger li{
     list-style: none;
-    padding: 2px;
-    text-align: center;
-    
 }

@@ -6,7 +6,7 @@ mongoose.connect('mongodb://localhost/StudentPortal', { useNewUrlParser: true })
 const SchoolInvoiceSchema = new Schema({
     userid: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'StduentInfo',
         required: true
         },
         session: {

@@ -1,12 +1,12 @@
-.profile .line{
+.line{
     border: 0.1px solid black;
 }
 .profile{
-    width: 900px;
     border: 5px solid black;
-    margin-left: 300px;
     height: 100%;
-    background-color: whitesmoke;
+    padding: 5%;
+    margin: 5%;
+    background-color: white;
     
 
 }
@@ -16,10 +16,8 @@
     margin: 0;
     /* text-align: center; */
 }
-.profile td{
-    width: 300px;
-}
-.profile td input[type='text']  {
+
+.profile input[type='text']  {
     display: inline-block;
   align-items:flex-end;
     width: 95%;
@@ -94,7 +92,7 @@
   
     width: auto;
     padding: 10px;
-    margin-left: 400px;
+    justify-content: center;
     margin-bottom: 7px;
     border: 1px solid lightslategrey;
     border-radius: 4px;
@@ -109,12 +107,22 @@
     text-align: center;
 margin-left: 10px;
 }
+.img{
+    display: flex;
+    justify-content: center;
+}
 .profile img{
     width: 160px;
     height: 150px;
-    position: absolute;
-    margin-top: -500px;
-    margin-left: 650px;
+    /* position: absolute; */
+    /* margin-top: -500px;
+    margin-left: 650px; */
 
     height: 200px;
+    border-radius: 100px;
+    
+}
+.update{
+    display: flex;
+    justify-content: center;
 }
