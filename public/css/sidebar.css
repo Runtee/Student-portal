@@ -6,20 +6,21 @@ body{
     background-color: steelblue;
 }
 
-header{
-    background-color:rgb(197, 66, 14);
+/* header{
 
-    background-image: url('../images/scott-graham-5fNmWej4tAA-unsplash4.jpg');
-/* background-repeat: round; */
-    /* opacity: 0.9; */
-/*    background: rgb(8, 58, 8);*/
-} 
+background-repeat: round; 
+    opacity: 0.9; 
+    background: rgb(8, 58, 8);
+}  */
 
-.navbar {
+.navbars {
     overflow: auto;
+    border-bottom: 1px solid rgb(19, 52, 71);
+    justify-content: space-around;
+
 }
 
-.navbar a{
+.navbars a{
     display: block;
     color: rgb(218, 214, 214);
     text-decoration: none;
@@ -27,7 +28,7 @@ header{
     font-weight: bold;
 }
 
-.navbar pre{
+.navbars pre{
     float: left;
     padding: 5px;
     color: #fff;
@@ -35,66 +36,30 @@ header{
     font-size: 20px;
 }
 
+.nav2{
+    background-color: rgb(0, 32, 78);
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
 
 .logo{
-    float: left;
+    /* float: left;
     border-radius: 30%;
     width: 50px;
     height: auto;
-    margin: 5px;
-    padding: 15px;
+    margin: 5px; */
+    padding: 2px;
 }
-.sidebar-main{
-    /* border: 1px gray solid; */
-    border-radius: 0px;
-    width:'250px';
-        position:absolute;
-    height: 100%;
-    margin-top: 0px;
-    transition: 0.5s;
-    margin-bottom: 0px;
-    /* padding-left: 27px; */
-    overflow: hidden;
-    background-color:darkslategray;
+.greeting{
+    padding: 5%;
+    text-align: center;
 }
-
-.sidebar {
-    list-style: none;
-    /* transition: 1.0s; */
-    /* background-color: rgba(20, 160, 118, 0.781) */
-    
-}
-
-
-.sidebar li {
-    font-size: 18px;
-    color: aliceblue;
-    line-height:  30px;
-    border-bottom:  solid 1px #333;
-    display: block;
-    transition: 0.3s
-}
-.sidebar li:last-child {
-    border: none;
-}
-
-.sidebar li a{
-    color: #333;
-    color: aliceblue;
-    text-transform: capitalize;
-    /* font-weight: bolder; */
-    text-decoration: none;
-}
-
-.sidebar li a:hover, .sidebar li a:active {
-    color: goldenrod
-}
-/* .current_side li a:hover,  */
-
 .course_form {
     
    text-align: center;
-   margin-left: -300px;
+   margin: 5%;
+   padding: 5%; 
    
 }
 .course_form p{
@@ -118,44 +83,6 @@ input[type=submit]{
     color: aliceblue
 }
 
-.menu{
-    padding: 10px;
-    margin-top: 0; 
-    border-radius: 3px;
-    color: aliceblue;
-    border: gray;
-    background-color:darkslategray;
-}
-.sidebar-main .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 30px;
-    color: aliceblue;
-    text-decoration: none;
-    margin-left: 50px;
-}
-/* .closebtn:hover, .menu:hover {
-    color: goldenrod;
-} */
-
-/* table{
-    margin-left: 300px; 
-    width: 700px;
-    height: 900px;
-    background-color: white;
-    border: 10px solid gray;} */
-
-/* td, tr{
-    /* border: 1px solid black; */
-    /* border-collapse:collapse; */
-        /* background-color: rgba(39, 39, 39, 0.692);  */
-
-/*padding: 2px;
-color: black;
-margin-left: 30px;
-
-} */
 .print{
     background-color: white;
     border: 0;
@@ -219,18 +146,3 @@ width: max-content;
 .password{
     margin-left: 500px;
 }
-
-
-
-
-
-
-
-
-
-@media screen and (max-height: 700px){
-    .course_form {margin-left: 300px}
-    .sidebar {width: 200px;
-    padding: 15px;}
-    h1{margin-left: 300px}
-  }

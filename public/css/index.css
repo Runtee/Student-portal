@@ -1,44 +1,30 @@
-.body2{
-    margin: 0;
-    padding: 0;
-background-color: rgb(255, 255, 255);  
-  background-size: cover;
-    font-family: sans-serif;
-}
+
 body{
     margin: 0;
     padding: 0;
+    background-color: rgb(255, 255, 255);  
     background-size: cover;
     font-family: sans-serif;
 }
 
 header{
-    background: rgb(8, 58, 8);
+    background:rgb(0, 32, 78);
+    color: white;
 } 
 
 .navbar {
     overflow: auto;
+    justify-content: space-around;
 }
 
 .navbar a{
-    display: block;
     color: #fff;
     text-decoration: none;
-    padding: 15px 15px;
-    font-weight: bold;
 }
 
-.navbar pre{
-    float: left;
-    padding: 5px;
-    color: #fff;
-    /* text-transform: uppercase; */
-    font-size: 20px;
-}
 
 .navbar ul{
     list-style: none;
-    float: right;
 }
 
 .navbar ul li{
@@ -49,72 +35,37 @@ header{
 
 .navbar ul li a:hover, 
 .navbar ul li a.current {     
-    background:rgb(36, 104, 16);
-    border-radius: 15px;
+    
+    border-bottom:2px solid white ;
 }
 
-.logo{
-    float: left;
-    border-radius: 30%;
-    width: 50px;
+.logoimg{
+   
+    width: auto;
     height: auto;
-    margin: 5px;
-    padding: 15px;
+  
 }
 
 .signinbox {
     position: relative;
-    top: 250px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    /* position: initial; */
-    height: 400px;
-    padding: 65px 40px;
+    height: 100%;
+    padding: 5%;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, .5);    
 }
 
-.user {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    top: calc(-50px/2);
-    left: calc(50% - 30px);
-}
 
 h2{
     margin: 0;
     padding: 0 0 20px;
-    color: #fff;
-    text-align: center;
+    color: #000;
+    text-align: left;
     text-transform: capitalize;
 }
-
-.signinbox p{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-}
-
-.signinbox input {
+.signinbox input{
     width: 100%;
-    margin-bottom: 20px;
+margin-bottom: 10px;
 }
-.signinbox input[type=text],
-.signinbox input[type=password] {
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #fff;
-    font-size: 16px;
-}
+
 
 ::placeholder {
     color: rgba(255, 255, 255, .5);
@@ -123,16 +74,14 @@ h2{
     border: none;
     outline: none;
     color: #fff;
-    height: 40px;
     font-size: 16px;
-    background: rgb(8, 58, 8);
+    background:rgb(0, 0, 0);
     cursor: pointer;
-    border-radius: 20px;
 }
 
 .signinbox input[type="submit"]:hover {
-    background: seagreen ;
-    color: rgb(8, 58, 8);
+    background: rgb(24, 24, 24) ;
+    color:rgb(255, 255, 255);
 }
 .signinbox a {
     color: #fff;
@@ -141,10 +90,10 @@ h2{
     text-decoration: none;
 }
 
-.footer {
+.footers {
     text-align: center;
-    background:rgb(8, 58, 8);
+    background:rgb(0, 32, 78);
     color: #fff;
-/*    position: bottom;*/
-    padding: 30px;
+   position:relative ;
+    padding: 5%;
 }

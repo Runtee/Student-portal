@@ -1,38 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('layouts/head_home adim'); -%>
+  <%- include('layouts/head_home'); -%>
 
-  <body style="background: url(public/images/back.jpg); background-size: cover;">
-    <%- include('layouts/header_home adim'); -%>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <div class="logoimg">
+            <img src="/public/images/kisspng-logo-download-clip-art-assiomi-della-comunicazione-5b52992fe89c93.2458036015321398239528.png" alt="no image" class="logo" style="width: 150px;height: 70px; margin-left: auto; "> 
+
+          </div>
+          <div class="">
+            <p>
+              TRUST UNIVERSITY
+            </p>
+          </div>
+           
+
+        </div>
+      </nav>
+    </header>
+
+      <% if(errors !=null && errors.length> 0){ %>
+
+        <ul class="danger">
+        <% for (var i=0; i < errors.length; i++) { %>
+            <li>
+              <div class="alert alert-danger alert-dismissible fade show danger" role="alert">
+                <%= errors[i] %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+            </li>
+            <% } %>
+            
+                </ul>
+                <% } %>
+     
 
     <div class="list-group-item-danger">
-      <% if(errors !=null && errors.length> 0){ %>
-          <ul class="list-group"></ul>
-          <% for (var i=0; i < errors.length; i++) { %>
-              <li>
-                  <%= errors[i] %>
-              </li>
-              <% } %>
-                  </ul>
-                  <% } %>
+      
   </div>
-    
-  <div class="signinbox" >  
-      <img src="/public/images/school_logo.gif"class="user">
-        <h2>login as admin</h2>
+   <div class="row" >
+  <div class="signinbox col-md-6" >  
+        <h2>Admin account</h2>
         <form action="/adim/login/auth" method="POST">
-              <p>username</p>
-            <input type="text" placeholder="Enter Username" name="username"> 
-            <p>password</p>
-            <input type="password" placeholder="******" name="password"> 
-            <input type="submit" name='' value=Login>
+          <h3>Login</h3>
+              <label class="form-label" for="username" >Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username"> 
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="******" name="password" id="password"> 
+            <input type="submit" class="form-control" name='' value=Login>
         </form>
-  </div>  
+  </div> 
+</div> 
   <br>
   <br>
   <br>
   <footer class="footer">
-      <p>built by Group 2 Cdel IT Students 2021 set. Copyright &copy; group 2</p>
+    <div class="footers">
+      <p>built by chinonso ekwo. Copyright &copy; ekwo.chinonso.01@gmail.com</p>
+
+    </div>
   </footer>  
+<<<<<<< HEAD
   </body>
 </html>
+=======
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+>>>>>>> 63cfbf2 (rewritting)

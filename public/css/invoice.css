@@ -82,9 +82,9 @@ td {
 .body {
     background: #FFF;
     box-sizing: border-box;
-    width: 900px;
-    margin-left: 290px;
-    height: 11in;
+    width: 90%;
+    margin: 4%;
+    /* height: 100%; */
     /* margin: 0; */
     overflow: hidden;
     padding: 0.5in;
@@ -219,7 +219,13 @@ tr:hover .cut {
 @media print {
     * {-webkit-print-color-adjust: exact;}
     html { background: none; padding: 0;}
-    body { box-shadow: none; margin: 0;}
+    .body { box-shadow: none; margin: 0;}
     span:empty { display: none;}
     .add, .cut { display: none;}
 }
+@media only screen and (max-width: 800px) {
+    .body {
+        box-shadow: none; margin: 0;
+        width: 100%;
+    }
+  }

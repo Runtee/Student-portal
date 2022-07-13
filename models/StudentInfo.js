@@ -1,15 +1,21 @@
 // const mongodb = require('mongodb');
+const uniqueValidator = require('mongoose-unique-validator');
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 mongoose.connect('mongodb://localhost/StudentPortal', { useNewUrlParser: true });
 
 const StudentInfoSchema = new Schema({
-    userid: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        unique:true,
-        required: true
-        },
+    login:{
+        username: {
+            type: String,
+            required: [true,'Please provide username'],
+            unique: [true,'Username already exists']
+            },
+            password: {
+            type: String,
+            required: [true,'Please provide password']
+            }
+    },
     firstName: {
         type: String,
         required: [true, 'Please provide first name'],
@@ -131,6 +137,17 @@ const StudentInfoSchema = new Schema({
         type:Array
     }
 });
+
+StudentInfoSchema.pre('save', function(next){
+    const user = this
+    bcrypt.hash(user.login.password, 10, (error, hash) => {
+    user.login.password = hash
+    next()
+    })
+
+})
+
+StudentInfoSchema.plugin(uniqueValidator);
 
 
 

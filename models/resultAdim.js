@@ -4,23 +4,45 @@ const Schema = mongoose.Schema;
 mongoose.connect('mongodb://localhost/StudentPortal', { useNewUrlParser: true });
 
 const ResultSchema = new Schema({
-    regNo: {
-        type: String,
-        required: true
-    },
-    session: {
-        type: String,
-        required: [true, 'Please provide session'],
-    },
-    level: {
-        type: String,
-        required: [true, 'Please provide level']
-    },
-    semester: {
-        type: String,
-        required: [true, 'Please provide semester']
-    }
+    courseCode:String,
+    student:
+        [{
+            regNo: {
+                type: String,
+                // required: false
+            },
+            courseCode: {
+                type: String,
+                // required: [false, 'Please provide courseCode']
+            },
+            score: {
+                type: String,
+                // required: [false, 'Please provide score']
+            }
+            ,
+            grade: {
+                type: String,
+                // required: [false, 'Please provide grade']
+            },
+            level: {
+                type: String,
+                // required: [false, 'Please provide level']
+            },
+        }    
+            
+        ]
+        ,session: {
+            type: String,
+            // required: [false, 'Please provide session'],
+        },
+        semester: {
+            type: String,
+            // required: [false, 'Please provide semester']
+        }
+        
+    
 })
+
 
 const resultAdimStore = mongoose.model('resultStoreAdim', ResultSchema);
 module.exports = resultAdimStore
