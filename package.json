@@ -9,17 +9,13 @@
   "author": "evans",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "connect-flash": "^0.1.1",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
-    "express-session": "^1.17.2",
     "fast-csv": "^4.3.6",
     "flash": "^1.1.0",
     "json2csv": "^5.0.6",
     "mongodb": "^4.1.0",
-    "mongoose": "^5.13.14",
-    "mongoose-unique-validator": "^3.0.0"
+    "mongoose": "^5.13.5"
   }
 }
