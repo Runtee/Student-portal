@@ -1,7 +1,21 @@
-const result = require('../models/resultAdim.js')
-const { parse } = require("fast-csv");
-module.exports ={
- csvUpload: (req, res) =>{
+const finfi = {
+    student: [
+        {
+            regNo: {},
+            score: {},
+            grade: {},
+            level: {},
+        },
+    ],
+    department: {},
+    courseCode: {},
+    session: {},
+    semester: {},
+};
+
+var { parse } = require("fast-csv");
+var Author = require("./author");
+exports.post = function (req, res) {
     if (!req.files) return res.status(400).send("No files were uploaded.");
     var authorFile = req.files.file.data.toString();
     //   const stream = Readable.from(authorFile);
@@ -18,7 +32,6 @@ module.exports ={
             undefined,
         ],
         renameHeaders: true,
-        ignoreEmpty: true
     })
         .on("error", (error) => console.error(error))
         .on("data", (data) => {
@@ -41,10 +54,7 @@ module.exports ={
                 'session',
                 'semester')
         ],
-        renameHeaders: true,
-        maxRows: 1,
-        ignoreEmpty: true
-
+        renameHeaders: true, maxRows: 2
     })
         .on("error", (error) => console.error(error))
         .on("data", (data) => {
@@ -56,38 +66,27 @@ module.exports ={
     stream2.write(authorFile);
     stream2.end();
     
-    var results = {
+    var result = {
         ...info[0],
         student:students
 
     }
-    result.create({
-        results
-    },(error,cos)=>{
-        if (!error){
-            res.redirect('/adim/dashboard/result/input')
-        }
-    },
-)    
-}
-    ,
-    input: async (req, res) => {
-        await result.create({
-            ...req.body,
-        },(error,cos)=>{
-            if (!error){
-                res.redirect('/adim/dashboard/result/input')
-            }
-        },
-    )
-    }
-    
 
-}
- 
-
-
-
-
-
-
+    // (objA,objB)=>{
+    //     let keyA , keyB
+    //     keyA= Object.keys(objA)
+        
+    //     keyB = Object.keys(objB)
+    //     if (keyA.length === keyB.length){
+    //         for (let index = 0; index < keyA.length; index++) {
+    //             if(keyA[index] == keyB[index]) {
+    //                 if (objA.keyA[index] != objA.keyA[index] ){
+    //                     return 'objects are not the same'
+    //                 }
+    //             }
+                
+    //         }
+    //     }
+    //     return 'object are the same'
+    // }
+};

@@ -11,10 +11,7 @@ const ResultSchema = new Schema({
                 type: String,
                 // required: false
             },
-            courseCode: {
-                type: String,
-                // required: [false, 'Please provide courseCode']
-            },
+          
             score: {
                 type: String,
                 // required: [false, 'Please provide score']
@@ -30,7 +27,16 @@ const ResultSchema = new Schema({
             },
         }    
             
-        ]
+        ],
+        courseCode: {
+            type: String,
+            // required: [false, 'Please provide courseCode']
+        }
+        ,
+        department:{
+            type: String,
+            // required: [false, 'Please provide session'],
+        }
         ,session: {
             type: String,
             // required: [false, 'Please provide session'],

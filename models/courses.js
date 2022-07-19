@@ -4,14 +4,22 @@ const Schema = mongoose.Schema;
 mongoose.connect('mongodb://localhost/StudentPortal', { useNewUrlParser: true });
 
 const CourseSchema = new Schema({
-    courseCode: {
-        type: String,
-        required: true
+    courses:{
+        type :[{
+            courseCode: {
+                type: String,
+                required: true
+            },
+            courseTitle: {
+                type: String,
+                    required: true
+            },
+        }
+            
+        ],
+        required:true
     },
-    courseTitle: {
-        type: String,
-            required: true
-    }, 
+     
     semester: {
         type: String,
         required: true
@@ -23,13 +31,8 @@ const CourseSchema = new Schema({
     department: {
         type: String,
          required: true
-    },
-    offeredby:{
-        department: {type:Array},
-        level:{
-            type:Array
-        }
     }
+
 })
 
 const Courses = mongoose.model('course', CourseSchema);
