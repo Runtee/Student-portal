@@ -19,7 +19,7 @@ const schoolFeesPostController = require("../controllers/schoolFeesPostControlle
 const successfulPassword = require("../controllers/successfulPassword")
 const welcomeController = require("../controllers/welcomeController")
 const authMiddleware = require("../middleware/authMiddleware")
-
+ 
 router.get('/',authMiddleware, welcomeController)
 router.get('/profile',authMiddleware, profileController)
 router.get('/schoolfees',authMiddleware, schoolfeesController)
