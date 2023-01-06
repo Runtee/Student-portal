@@ -1,21 +1,37 @@
-<div class="sidebar-main" id="mysidebar">
-    <nav class="sidebar-nav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="position-sticky pt-3 sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/adim/dashboard/fresh">
+          <span data-feather="home" class="align-text-bottom"></span>
+          Add Student
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/adim/dashboard/courses">
+          <span data-feather="file" class="align-text-bottom"></span>
+          Courses
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/adim/dashboard/result">
+          <span data-feather="shopping-cart" class="align-text-bottom"></span>
+          Results
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/adim/dashboard/students">
+          <span data-feather="users" class="align-text-bottom"></span>
+          Report
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/adim/dashboard/change-password/">
+          <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+          Change password
+        </a>
+      </li>
+    </ul>
 
-      <ul class="sidebar">
-        <li><a href="/adim/dashboard/fresh">Add Student</a></li>
-        <li><a href="/adim/dashboard/students">View Students</a></li>
-
-        <li><a href="/adim/dashboard/courses">Courses</a></li>
-        <li><a href="/adim/dashboard/result">results</a></li>
-        <li><a href="/adim/auth/logout">logout</a></li>
-      </ul>
-
-    </nav>
   </div>
-  <span style="font-size:30px;cursor:
-pointer" onclick="openNav()">
-
-
-    
-  </span>
+</nav>

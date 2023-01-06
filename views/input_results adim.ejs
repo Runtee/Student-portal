@@ -1,133 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include('layouts/head adim'); -%>
+<%- include('layouts/head adim'); -%>
 
-<body style="background-color: white;">
- 
+<body>
+
   <%- include('layouts/header adim'); -%>
 
+  <div class="container-fluid">
+    <div class="row">
+      <%- include('layouts/sidebar adim'); -%>
 
-
-  <div class="sidebar-main" id="mysidebar">
-    <nav class="sidebar-nav">
-
-      <ul class="sidebar">
-        <li><a href="/adim/dashboard/fresh">Add Student</a></li>
-
-        <li><a href="/adim/dashboard/courses">Courses</a></li>
-        <li class="current_side"><a href="/adim/dashboard/result">results</a></li>
-        <li><a href="/adim/dashboard/students">Report</a></li>
-
-        <li><a href="/adim/auth/logout">logout</a></li>
-      </ul>
-
-    </nav>
-  </div>
-  <style>
-.course{
-    width: 120px;
-     margin-left: 10px; 
-    color: aliceblue;
-     background-color: gray;
-     font-size: 17px;
-      /* font-weight: bolder;  */
-    border: none;
-}
-.score{
-    width: 50px;
-     margin-left: 10px;
-    background-color: white;
-    color: gray;
-}
-</style>
-
-<% if(cours != null ){ %>
-<form method="POST" action="/adim/dashboard/result/input/store">
-<table style="margin-left: 300px; width: 400px; height: auto;padding: 3px; border: gray;">
-          <tr>
-        <td>
-          <p class="main-word" style="font-size: 14px;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Registration Number:</span><br>
-              <input name="regNo" value="<%= cours.regNo %>" class="course" >
-            </p>
-        </td>
-        <td style="padding: 2px;">
-          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Level:</span><br>
-              <input name="level" value="<%= cours.level %>" class="course" >
-            </p>
-        </td>
-       </tr> 
-    
-      <tr>
-        <td>
-          <p class="main-word" style="font-size: 14px;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Session:</span><br>
-              <input name="session" value="<%= cours.session %>" class="course" >
-
-            </p>
-        </td>
-        <td style="padding: 2px;">
-          <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable"
-              style="font-size: 14px; font-style: italic;">Semester:</span><br>
-              <input name="semester" value="<%= cours.semester %>" class="course" >
-
-            </p>
-        </td>
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+          <h1 class="h2">Results</h1>
+        </div>
+        <% if(cours != null ){ %>
+          <form method="POST" action="/adim/dashboard/result/input/store">
+            <table style="margin-left: 300px; width: 400px; height: auto;padding: 3px; border: gray;">
+              <tr>
+                <td>
+                  <p class="main-word" style="font-size: 14px;"><span class="lable" style="font-size: 14px; font-style: italic;">Registration Number:</span><br>
+                    <input name="regNo" value="<%= cours.regNo %>" class="course">
+                  </p>
+                </td>
+                <td style="padding: 2px;">
+                  <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable" style="font-size: 14px; font-style: italic;">Level:</span><br>
+                    <input name="level" value="<%= cours.level %>" class="course">
+                  </p>
+                </td>
+              </tr>
         
+              <tr>
+                <td>
+                  <p class="main-word" style="font-size: 14px;"><span class="lable" style="font-size: 14px; font-style: italic;">Session:</span><br>
+                    <input name="session" value="<%= cours.session %>" class="course">
+        
+                  </p>
+                </td>
+                <td style="padding: 2px;">
+                  <p class="main-word" style="font-size: 14px; font-family: inherit;"><span class="lable" style="font-size: 14px; font-style: italic;">Semester:</span><br>
+                    <input name="semester" value="<%= cours.semester %>" class="course">
+        
+                  </p>
+                </td>
+        
+        
+              </tr>
+        
+              <tr>
+                <th>
+                  Course code
+                </th>
+                <th>
+                  Score
+                </th>
+                <th>
+                  Grade
+                </th>
+        
+              </tr>
+              <% for (var i=0; i < cours.courses.length; i++) { %>
+              <tr>
+                <td>
+                  <input name="courseCode" value="<%= cours.courses[i] %>" class="course">
+                </td>
+                <td>
+                  <input type="number" class="score" name="score" required>
+                </td>
+                <td>
+                  <select name="grade" required>
+                    <option>
+                      A
+                    </option>
+                    <option>
+                      B
+                    </option>
+                    <option>
+                      C
+                    </option>
+                    <option>
+                      D
+                    </option>
+                    <option>
+                      E
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <% } %>
+        
+            </table>
+            <input type="submit" value="submit" style="margin-left: 480px; border: 2px gray; margin-top: 2px;">
+          </form>
+          <% } else{ %>
+          <p style="text-align: center; color: rgb(41, 40, 40); font-size: 22px;"> No courses found for this student</p>
+          <% } %>
+      </main>
+    </div>
+  </div>
 
-      </tr>
-
-      <tr>
-        <th>
-        Course code
-    </th>
-    <th>
-        Score      
-        </th>
-     <th>
-        Grade      
-        </th>
-
-    </tr>
-        <% for (var i=0; i < cours.courses.length; i++) { %>
-    <tr>
-        <td>
-          <input name="courseCode" value="<%= cours.courses[i] %>" class="course" >
-        </td>
-        <td>
-            <input type="number" class="score" name="score" required>
-        </td>
-        <td>
-     <select name="grade" required >
-    <option>
-        A
-    </option>
-    <option>
-        B
-    </option>
-    <option>
-        C
-    </option>
-    <option>
-        D
-    </option>
-    <option>
-        E
-    </option>
-</select>         
-        </td>
-    </tr>
-    <% } %>
-    
-</table>
-<input type="submit" value="submit" style="margin-left: 480px; border: 2px gray; margin-top: 2px;"> 
-</form>
-<% } 
-else{ %>
-<p style="text-align: center; color: rgb(41, 40, 40); font-size: 22px;">  No courses found for this student</p>
-<% } %>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

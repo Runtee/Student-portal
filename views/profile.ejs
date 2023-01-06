@@ -49,7 +49,7 @@
                         <div class="tale">
                             <div>
                                 <div class="img">
-                                    <img src="/public/<%= studentInfo[0].image %>">
+                                    <img src="/public/<%= studentInfo[0]?.image %>">
 
                                 </div>
                                 <div class="row">
@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="col-6">
                                         <input type="text" id="fname" name="firstName" readonly
-                                            value="<%= studentInfo[0].firstName%> ">
+                                            value="<%= studentInfo[0]?.firstName%> ">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="col-6">
                                         <input type="text" id="mname" name="middleName" readonly
-                                            value="<%= studentInfo[0].middleName %>">
+                                            value="<%= studentInfo[0]?.middleName %>">
                                     </div><br>
                                     </p>
                                 </div>
@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="col-6">
                                         <input type="text" id="sname" name="surName" readonly
-                                            value="<%=studentInfo[0].surName %>">
+                                            value="<%=studentInfo[0]?.surName %>">
                                     </div>
                                     </p>
                                 </div>
@@ -89,7 +89,7 @@
                                         <label for="email">Email</label>
                                     </div>
                                     <div class="col-6">
-                                        <input type="email" name="email" id="email" value="<%=studentInfo[0].email %>"
+                                        <input type="email" name="email" id="email" value="<%=studentInfo[0]?.email %>"
                                             readonly> <br>
                                     </div>
                                     </p>
@@ -100,7 +100,7 @@
                                         <label for="date">Date of Birth</label>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" name="DOB" id="DOB" value="<%=studentInfo[0].DOB %>"
+                                        <input type="text" name="DOB" id="DOB" value="<%=studentInfo[0]?.DOB %>"
                                             readonly>
                                     </div>
                                     </p>
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="col-6">
                                         <input type="tel" id="phone number" name="phone"
-                                            value="<%=studentInfo[0].phone %>" readonly>
+                                            value="<%=studentInfo[0]?.phone %>" readonly>
                                     </div>
                                     </p>
                                 </div>
@@ -123,8 +123,8 @@
                                     </div>
                                     <div class="col-6">
                                         <select name="state" id="state" name='state' aria-readonly="true">
-                                            <option value="<%=studentInfo[0].state %>">
-                                                <%=studentInfo[0].state %>
+                                            <option value="<%=studentInfo[0]?.state %>">
+                                                <%=studentInfo[0]?.state %>
                                             </option>
 
                                         </select>
@@ -137,7 +137,7 @@
                                         <label for="Local">Local Government of Origin</label>
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" id="local" name="LGA" value="<%=studentInfo[0].LGA %>"
+                                        <input type="text" id="local" name="LGA" value="<%=studentInfo[0]?.LGA %>"
                                             readonly>
                                     </div>
                                     </p>
@@ -207,7 +207,7 @@
                                     <div class="col-6">
                                         <select name="sex" id="sex" aria-readonly="true">
                                             <option>
-                                                <%=studentInfo[0].sex %>
+                                                <%=studentInfo[0]?.sex %>
                                             </option>
                                         </select>
                                     </div>
@@ -229,7 +229,7 @@
                                         <label for="sfullname">Sponsor's Full name</label>
                                     </div>
                                     <div class="col-md-3 col-6"><input type="text" name="parent" id="sfullname"
-                                            value="<%=studentInfo[0].parent %>">
+                                            value="<%=studentInfo[0]?.parent %>">
                                     </div>
                                     <div class="col-md-3 col-6">
                                         <label for="saddress">Sponsor's Address</label>
@@ -241,7 +241,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-6"><label for="smobile">Sponsor's Mobile No</label></div>
                                     <div class="col-md-3 col-6"><input type="text" name="smobile" id="smoblile"
-                                            value="<%=studentInfo[0].phone %>">
+                                            value="<%=studentInfo[0]?.phone %>">
                                     </div>
                                     <div class="col-md-3 col-6">
                                         <label for="nfullname">Next of kin Full name</label>
@@ -283,14 +283,14 @@
                                 <div class="row">
                                     <div class="col-md-3 col-6"><label for="faculty">Faculty</label></div>
                                     <div class="col-md-3 col-6">
-                                        <input type="text" name="faculty" value="<%=studentInfo[0].faculty %>" readonly>
+                                        <input type="text" name="faculty" value="<%=studentInfo[0]?.faculty %>" readonly>
                                     </div>
 
                                     <div class="col-md-3 col-6">
                                         <label for="dept">Department</label>
                                     </div>
                                     <div class="col-md-3 col-6">
-                                        <input type="text" name="department" value="<%=studentInfo[0].department %>"
+                                        <input type="text" name="department" value="<%=studentInfo[0]?.department %>"
                                             readonly>
                                     </div>
                                 </div>
@@ -339,7 +339,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-6"><label for="reg">Registration Number</label></div>
                                     <div class="col-md-3 col-6"><input type="text" name="regNo" id="reg"
-                                            value="<%=studentInfo[0].userid.username %>" readonly></div>
+                                            value="<%=studentInfo[0]?.userid?.username %>" readonly></div>
                                 </div>
                             </div>
                         </div>

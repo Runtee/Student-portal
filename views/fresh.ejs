@@ -2,57 +2,150 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal | Welcome</title>
-    <%- include('layouts/head_home'); -%>
-    <%- include('layouts/head'); -%>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <%- include('layouts/head'); -%>
 
 </head>
 
-<body class="body2">
-    <%- include('layouts/header adim'); -%>
+<body>
 
+  <%- include('layouts/header adim'); -%>
 
-    <div class="sidebar-main" id="mysidebar">
-        <nav class="sidebar-nav">
+  <div class="container-fluid">
+    <div class="row">
+      <%- include('layouts/sidebar adim'); -%>
+      <% if(errors !=null && errors.length> 0){ %>
+        <% for (var i=0; i < errors.length; i++) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= errors[i] %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        <% } %>
+        <% } %>
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+          <h1 class="h2">Add Student</h1>
+        </div>
+        <div class='SignUp'>
     
-          <ul class="sidebar">
-            <li class="current_side"><a href="/adim/dashboard/fresh">Add Student</a></li>
-    
-            <li><a href="/adim/dashboard/courses">Courses</a></li>
-            <li ><a href="/adim/dashboard/result">results</a></li>
-            <li><a href="/adim/dashboard/students">Report</a></li>
-            <li><a href= '/adim/dashboard/change-password/'>Change password </a></li>
-
-            <li><a href="/adim/auth/logout">logout</a></li>
-          </ul>
-    
-        </nav>
-      </div>
-       <div class="list-group-item-danger">
-        <% if(errors !=null && errors.length> 0){ %>
-            <ul class="list-group"></ul>
-            <% for (var i=0; i < errors.length; i++) { %>
-                <li>
-                    <%= errors[i] %>
-                </li>
-                <% } %>
-                    </ul>
-                    <% } %>
+          <form action="/users/register" class="row" method="POST" enctype="multipart/form-data">
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="name">First Name</label>
+              <input class="form-control"type="text" id="name" name='firstName' required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="Middle">Middle Name</label>
+              <input class="form-control"type="text" id="Middle " name="middleName" required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="Surname">Surname</label>
+              <input class="form-control"type="text" id="Surname" name='surName' required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="Email">Email</label>
+              <input class="form-control"type="email" name="email" id="email" required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="session">Year of addmission</label>
+              <input class="form-control"type="text" name="session" id="session" required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="faculty">Faculty</label>
+              <input class="form-control"type="text" id="faculty" name="faculty" required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="Department">Department</label>
+              <input class="form-control"type="text" id="Department" name='department' required>
+            </div>
+      
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="birthdate">Date of Birth</label>
+              <input class="form-control"type="date" name="DOB" id="birthdate" required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="sex">Sex</label>
+              <select class="form-select"name="sex" id="sex" required placeholder="Select Sex">
+                <option></option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+      
+              </select>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="phone number">Phone Number</label>
+              <input class="form-control"type="number" id="phone number" name="phone" required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="name">Parent/Guardian name</label>
+              <input class="form-control"type="text" id="name" name="parent" required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="name">Parent/Guardian phone number</label>
+              <input class="form-control"type="number" id="name" name="parentNumber" required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="state">State of origin</label>
+              <select class="form-select"name="state" id="state" required>
+                <option value="abia">Abia</option>
+                <option value="adamawa">Adamawa</option>
+                <option value="akwa-ibom">Akwa-Ibom</option>
+                <option value="anambra">Anambra</option>
+                <option value="bauchi">Bauchi</option>
+                <option value="bayelsa">Bayelsa</option>
+                <option value="benue">Benue</option>
+                <option value="borno">Borno</option>
+                <option value="cross river">Cross River</option>
+                <option value="delta">Delta</option>
+                <option value="ebonyi">Ebonyi</option>
+                <option value="edo">Edo</option>
+                <option value="ekiti">Ekiti</option>
+                <option value="enugu">Enugu</option>
+                <option value="gombe">Gombe</option>
+                <option value="imo">Imo</option>
+                <option value="jigawa">Jigawa</option>
+                <option value="kaduna">Kaduna</option>
+                <option value="Kano">Kano</option>
+                <option value="kastina">Kastina</option>
+                <option value="kebbi">Kebbi</option>
+                <option value="kogi">Kogi</option>
+                <option value="kwara">Kwara</option>
+                <option value="lagos">Lagos</option>
+                <option value="nasarawa">Nasarawa</option>
+                <option value="niger">Niger</option>
+                <option value="ogun">Ogun</option>
+                <option value="ondo">Ondo</option>
+                <option value="osun">Osun</option>
+                <option value="oyo">Oyo</option>
+                <option value="plateau">Plateau</option>
+                <option value="rivers">Rivers</option>
+                <option value="sokoto">Sokoto</option>
+                <option value="taraba">Taraba</option>
+                <option value="yobe">Yobe</option>
+                <option value="zamfara">Zamfara</option>
+                <option value="fct">FCT</option>
+              </select>
+            </div>
+      
+            <div class="mb-2 col-sm-6  col-lg-4 " >
+              <label for="Local">Local Government of Origin</label>
+              <input class="form-control"type="local" id="local" name="LGA" required>
+            </div>
+            <div class="mb-2 col-sm-6  col-lg-4 ">
+              <label>Passport</label>
+              <input class="form-control"type="file" id="image" name="image">
+            </div>
+          </form>
+          <input class="btn btn-primary btn-lg"type="submit" value="Submit">
+        </div>
+      </main>
     </div>
-  <div class="signinbox" >  
-        <h2>Create a Student account </h2>
-        <form action="/fresh/post" method="POST">
-              <p>username</p>
-            <input type="text" placeholder="Enter Reg No" name = 'username'>
-            <p>password</p>
-            <input type="password" placeholder="Enter Reg No" name="password">
-            <input type="submit" name='' value=continue>
-            <a href="#">Forget Password</a>
-        </form>
   </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

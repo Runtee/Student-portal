@@ -2,140 +2,160 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal | Welcome</title>
-    <%- include('layouts/head_form adim'); -%>
-    <%- include('layouts/head'); -%>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <%- include('layouts/head'); -%>
 
 </head>
 
+<body>
+
+  <%- include('layouts/header adim'); -%>
+
+  <div class="container-fluid">
+    <div class="row">
+      <%- include('layouts/sidebar adim'); -%>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+          <h1 class="h2"></h1>
+        </div>
+        <h2 class="text-center">Welcome to the admin page</h2>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
 <body style="background: url(public/images/back.jpg); background-size: cover;">
-    <%- include('layouts/header adim'); -%>
+  <%- include('layouts/header adim'); -%>
 
 
-    <%- include('layouts/sidebar adim'); -%>
-    <div class="list-group-item-danger">
-        <% if(errors !=null && errors.length> 0){ %>
-            <ul class="list-group"></ul>
-            <% for (var i=0; i < errors.length; i++) { %>
-                <li>
-                    <%= errors[i] %>
-                </li>
-                <% } %>
-                    </ul>
-                    <% } %>
-    </div>
+  <%- include('layouts/sidebar adim'); -%>
+    <% if(errors !=null && errors.length> 0){ %>
+    <% for (var i=0; i < errors.length; i++) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= errors[i] %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    <% } %>
+    <% } %>
 
+  <div class='SignUp'>
+    <form action="/users/register" method="POST" enctype="multipart/form-data">
+      <div>
 
-    <div class='SignUp'>
-        <form action="/users/register" method="POST" enctype="multipart/form-data">
-            <div>
+        <label for="name">First Name</label>
+        <input type="text" id="name" name='firstName' required>
+      </div>
+      <div>
+        <label for="Middle">Middle Name</label>
+        <input type="text" id="Middle " name="middleName" required>
+      </div>
+      <div>
+        <label for="Surname">Surname</label>
+        <input type="text" id="Surname" name='surName' required>
+      </div>
+      <div>
+        <label for="Email">Email</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div>
+        <label for="session">Year of addmission</label>
+        <input type="text" name="session" id="session" required>
+      </div>
+      <div>
+        <label for="faculty">Faculty</label>
+        <input type="text" id="faculty" name="faculty" required>
+      </div>
+      <div>
+        <label for="Department">Department</label>
+        <input type="text" id="Department" name='department' required>
+      </div>
 
-                <label for="name">First Name</label>
-                <input type="text" id="name" name='firstName' required> 
-            </div>
-            <div>
-                <label for="Middle">Middle Name</label>
-                <input type="text" id="Middle " name="middleName" required>
-            </div>
-            <div>
-                <label for="Surname">Surname</label>
-                <input type="text" id="Surname" name='surName' required>
-            </div>
-            <div>
-                <label for="Email">Email</label>
-                <input type="email" name="email" id="email" required>
-            </div>
-            <div>
-                <label for="faculty">Faculty</label>
-                <input type="text" id="faculty" name="faculty" required>
-            </div>
-            <div>
-                <label for="Department">Department</label>
-                <input type="text" id="Department" name='department' required>
-            </div>
+      <div>
+        <label for="birthdate">Date of Birth</label>
+        <input type="date" name="DOB" id="birthdate" required>
+      </div>
+      <div>
+        <label for="sex">Sex</label>
+        <select name="sex" id="sex" required placeholder="Select Sex">
+          <option></option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
 
-            <div>
-                <label for="birthdate">Date of Birth</label>
-                <input type="date" name="DOB" id="birthdate" required> 
-            </div>
-            <div>
-                <label for="sex">Sex</label>
-                <select name="sex" id="sex" required placeholder="Select Sex"> 
-                    <option></option>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                    
-                </select>
-            </div>
-            <div>
-                <label for="phone number">Phone Number</label>
-                <input type="number" id="phone number" name="phone" required>
-            </div>
-            <div>
-                <label for="name">Parent/Guardian name</label>
-                <input type="text" id="name" name="parent"  required>
-            </div>
-            <div>
-                <label for="name">Parent/Guardian phone number</label>
-                <input type="number" id="name" name="parentNumber" required>
-            </div>
-            <div>
-                <label for="state">State of origin</label>
-                <select name="state" id="state" required>
-                    <option value="abia">Abia</option>
-                    <option value="adamawa">Adamawa</option>
-                    <option value="akwa-ibom">Akwa-Ibom</option>
-                    <option value="anambra">Anambra</option>
-                    <option value="bauchi">Bauchi</option>
-                    <option value="bayelsa">Bayelsa</option>
-                    <option value="benue">Benue</option>
-                    <option value="borno">Borno</option>
-                    <option value="cross river">Cross River</option>
-                    <option value="delta">Delta</option>
-                    <option value="ebonyi">Ebonyi</option>
-                    <option value="edo">Edo</option>
-                    <option value="ekiti">Ekiti</option>
-                    <option value="enugu">Enugu</option>
-                    <option value="gombe">Gombe</option>
-                    <option value="imo">Imo</option>
-                    <option value="jigawa">Jigawa</option>
-                    <option value="kaduna">Kaduna</option>
-                    <option value="Kano">Kano</option>
-                    <option value="kastina">Kastina</option>
-                    <option value="kebbi">Kebbi</option>
-                    <option value="kogi">Kogi</option>
-                    <option value="kwara">Kwara</option>
-                    <option value="lagos">Lagos</option>
-                    <option value="nasarawa">Nasarawa</option>
-                    <option value="niger">Niger</option>
-                    <option value="ogun">Ogun</option>
-                    <option value="ondo">Ondo</option>
-                    <option value="osun">Osun</option>
-                    <option value="oyo">Oyo</option>
-                    <option value="plateau">Plateau</option>
-                    <option value="rivers">Rivers</option>
-                    <option value="sokoto">Sokoto</option>
-                    <option value="taraba">Taraba</option>
-                    <option value="yobe">Yobe</option>
-                    <option value="zamfara">Zamfara</option>
-                    <option value="fct">FCT</option>
-                </select>
-            </div>
+        </select>
+      </div>
+      <div>
+        <label for="phone number">Phone Number</label>
+        <input type="number" id="phone number" name="phone" required>
+      </div>
+      <div>
+        <label for="name">Parent/Guardian name</label>
+        <input type="text" id="name" name="parent" required>
+      </div>
+      <div>
+        <label for="name">Parent/Guardian phone number</label>
+        <input type="number" id="name" name="parentNumber" required>
+      </div>
+      <div>
+        <label for="state">State of origin</label>
+        <select name="state" id="state" required>
+          <option value="abia">Abia</option>
+          <option value="adamawa">Adamawa</option>
+          <option value="akwa-ibom">Akwa-Ibom</option>
+          <option value="anambra">Anambra</option>
+          <option value="bauchi">Bauchi</option>
+          <option value="bayelsa">Bayelsa</option>
+          <option value="benue">Benue</option>
+          <option value="borno">Borno</option>
+          <option value="cross river">Cross River</option>
+          <option value="delta">Delta</option>
+          <option value="ebonyi">Ebonyi</option>
+          <option value="edo">Edo</option>
+          <option value="ekiti">Ekiti</option>
+          <option value="enugu">Enugu</option>
+          <option value="gombe">Gombe</option>
+          <option value="imo">Imo</option>
+          <option value="jigawa">Jigawa</option>
+          <option value="kaduna">Kaduna</option>
+          <option value="Kano">Kano</option>
+          <option value="kastina">Kastina</option>
+          <option value="kebbi">Kebbi</option>
+          <option value="kogi">Kogi</option>
+          <option value="kwara">Kwara</option>
+          <option value="lagos">Lagos</option>
+          <option value="nasarawa">Nasarawa</option>
+          <option value="niger">Niger</option>
+          <option value="ogun">Ogun</option>
+          <option value="ondo">Ondo</option>
+          <option value="osun">Osun</option>
+          <option value="oyo">Oyo</option>
+          <option value="plateau">Plateau</option>
+          <option value="rivers">Rivers</option>
+          <option value="sokoto">Sokoto</option>
+          <option value="taraba">Taraba</option>
+          <option value="yobe">Yobe</option>
+          <option value="zamfara">Zamfara</option>
+          <option value="fct">FCT</option>
+        </select>
+      </div>
 
-            <div>
-                <label for="Local">Local Government of Origin</label>
-                <input type="local" id="local" name="LGA" required>
-            </div>
-            <div class="">
-                <label>Passport</label>
-                <input type="file"  id="image" name="image" >
-            </div>
+      <div>
+        <label for="Local">Local Government of Origin</label>
+        <input type="local" id="local" name="LGA" required>
+      </div>
+      <div class="">
+        <label>Passport</label>
+        <input type="file" id="image" name="image">
+      </div>
 
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 

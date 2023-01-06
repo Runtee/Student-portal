@@ -10,7 +10,12 @@ app.use(express.urlencoded())
 const mongoose = require('mongoose')
 const fileUpload = require('express-fileupload')
 app.use(fileUpload())
-mongoose.connect('mongodb://localhost/StudentPortal', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost/StudentPortal', { useNewUrlParser: true, useUnifiedTopology: true })
+.then((db)=>{
+    console.log("db connected")
+}).catch((err)=>{
+    console.log(err)
+});
 
 
 // const homeController = require('./controllers/home')
