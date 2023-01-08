@@ -1,7 +1,6 @@
 // const mongodb = require('mongodb');
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost/StudentPortal', { useNewUrlParser: true });
 
 const CosRegSchema = new Schema({
     userid: {
