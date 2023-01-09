@@ -1,13 +1,20 @@
 const StudentInfo = require('../models/StudentInfo')
 
 module.exports = async (req, res) => {
-    var newk = {'userid': req.session.userId } ;
-    var updateStudentInfo = await StudentInfo.findOne({userid:req.session.userId})
-    var newp= req.body
-    console.log(newp);
-    updateStudentInfo.updateMany(newp,(er,up)=>{
-        console.log(er,up);
-    })
+    try{
+        var updateStudentInfo = await StudentInfo.findOne({_id:req.session.userId})
+        var newp= req.body
+        console.log(newp);
+        updateStudentInfo.updateMany(newp,(er,up)=>{
+            console.log(er,up);
+        })
+    
+    }
+    catch(error){
+        req.flash("error","an error occurred")
+        res.redirect('/dashboard/profile')
+    }
+    
 
 }
 // StudentInfo.save()

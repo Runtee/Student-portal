@@ -4,34 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal | Welcome</title>
-    <%- include('layouts/head_home'); -%>
+    <title>Admin | Account</title>
     <%- include('layouts/head'); -%>
 
 </head>
+<body>
 
-<body class="body2">
-    <%- include('layouts/header adim'); -%>
+  <%- include('layouts/header adim'); -%>
 
+  <div class="container-fluid">
+    <div class="row">
+      <%- include('layouts/sidebar adim'); -%>
 
-    <div class="sidebar-main" id="mysidebar">
-        <nav class="sidebar-nav">
-    
-          <ul class="sidebar">
-            <li class="current_side"><a href="/adim/dashboard/fresh">Add Student</a></li>
-    
-            <li><a href="/adim/dashboard/courses">Courses</a></li>
-            <li ><a href="/adim/dashboard/result">results</a></li>
-            <li><a href="/adim/dashboard/students">Report</a></li>
-    
-            <li><a href="/adim/auth/logout">logout</a></li>
-          </ul>
-    
-        </nav>
-      </div>
- 
-      <h3 style="margin-left: 350px;">Congratulation, Account created successfully </h3>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+          <h1 class="h2"></h1>
+        </div>
+        <h2 class="text-center">Congratulation, Account created successfully</h2>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

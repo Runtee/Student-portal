@@ -11,6 +11,10 @@ const SchoolInvoiceSchema = new Schema({
         type: String,
         required: [true, 'Please provide session'],
     },
+    invoiceNumer: {
+        type: String,
+        required: [true, 'Please provide session'],
+    },
     level: {
         type: String,
         required: [true, 'Please provide level']

@@ -1,8 +1,7 @@
-// const mongodb = require('mongodb');
 const uniqueValidator = require('mongoose-unique-validator');
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost/StudentPortal', { useNewUrlParser: true });
+const bcrypt = require("bcrypt")
 
 const StudentInfoSchema = new Schema({
     login:{
@@ -135,7 +134,10 @@ const StudentInfoSchema = new Schema({
     },
     sick:{
         type:Array
-    }
+    },
+    year:{
+        type: String,
+        required: [true, 'year is required']}
 });
 
 StudentInfoSchema.pre('save', function(next){
